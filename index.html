@@ -95,6 +95,56 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
 .reveal-right.visible { opacity: 1; transform: none; }
 
 /* =============================================
+   LANG TOGGLE
+   ============================================= */
+.lang-toggle {
+  display: flex; align-items: center;
+  background: rgba(196,149,43,.1);
+  border: 1px solid rgba(196,149,43,.35);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+.lang-toggle button {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 0.75rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: transparent; border: none; cursor: pointer;
+  color: var(--muted);
+  padding: 0.3rem 0.55rem;
+  transition: background .2s, color .2s;
+  line-height: 1;
+}
+.lang-toggle button.active {
+  background: var(--gold);
+  color: var(--black);
+}
+.lang-toggle button:hover:not(.active) { color: var(--gold); }
+.lang-sep {
+  width: 1px; height: 14px;
+  background: rgba(196,149,43,.35);
+  flex-shrink: 0;
+}
+/* Mobile lang toggle inside mobile menu */
+.mobile-lang-toggle {
+  display: flex; align-items: center;
+  background: rgba(196,149,43,.1);
+  border: 1px solid rgba(196,149,43,.35);
+  border-radius: 2px; overflow: hidden;
+}
+.mobile-lang-toggle button {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 1rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: transparent; border: none; cursor: pointer;
+  color: var(--muted); padding: 0.5rem 1rem;
+  transition: background .2s, color .2s;
+}
+.mobile-lang-toggle button.active { background: var(--gold); color: var(--black); }
+.mobile-lang-toggle button:hover:not(.active) { color: var(--gold); }
+
+/* =============================================
    NAV
    ============================================= */
 #navbar {
@@ -132,6 +182,9 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
   transition: color .2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-right {
+  display: flex; align-items: center; gap: 0;
+}
 .nav-cta { margin-left: 1rem; }
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
@@ -675,6 +728,7 @@ footer {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
+  .nav-right .lang-toggle { display: flex; }
 }
 @media (max-width: 640px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -701,27 +755,39 @@ footer {
       SAL'S <span>IRONWORKS</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+      <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+      <li><a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a></li>
+      <li><a href="#why" data-en="Why Us" data-es="Por Qué">Why Us</a></li>
+      <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
     </ul>
-    <a href="tel:9157404901" class="btn btn-primary nav-cta">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      (915) 740-4901
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-toggle" id="lang-toggle-desktop">
+        <button id="btn-en-desktop" class="active" onclick="setLang('en')">EN</button>
+        <div class="lang-sep"></div>
+        <button id="btn-es-desktop" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="tel:9157404901" class="btn btn-primary nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (915) 740-4901
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#about" class="mm-link">About</a>
-  <a href="#services" class="mm-link">Services</a>
-  <a href="#gallery" class="mm-link">Gallery</a>
-  <a href="#why" class="mm-link">Why Us</a>
-  <a href="#contact" class="mm-link">Contact</a>
+  <a href="#about" class="mm-link" data-en="About" data-es="Nosotros">About</a>
+  <a href="#services" class="mm-link" data-en="Services" data-es="Servicios">Services</a>
+  <a href="#gallery" class="mm-link" data-en="Gallery" data-es="Galería">Gallery</a>
+  <a href="#why" class="mm-link" data-en="Why Us" data-es="Por Qué">Why Us</a>
+  <a href="#contact" class="mm-link" data-en="Contact" data-es="Contacto">Contact</a>
+  <div class="mobile-lang-toggle">
+    <button id="btn-en-mobile" class="active" onclick="setLang('en')">EN</button>
+    <div class="lang-sep"></div>
+    <button id="btn-es-mobile" onclick="setLang('es')">ES</button>
+  </div>
   <a href="tel:9157404901" class="btn btn-primary">(915) 740-4901</a>
 </div>
 
@@ -736,39 +802,39 @@ footer {
   <div class="grain"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">El Paso, TX — Est. 30+ Years</div>
+      <div class="hero-eyebrow" data-en="El Paso, TX — Est. 30+ Years" data-es="El Paso, TX — Est. 30+ Años">El Paso, TX — Est. 30+ Years</div>
       <h1 class="hero-title">
         SAL'S
         <span class="accent">IRONWORKS</span>
       </h1>
-      <p class="hero-sub">Custom gates, railings, pergolas & structural fabrication. Welded in El Paso. Built to last generations.</p>
+      <p class="hero-sub" data-en="Custom gates, railings, pergolas &amp; structural fabrication. Welded in El Paso. Built to last generations." data-es="Portones, barandales, pérgolas y fabricación estructural a la medida. Soldado en El Paso. Construido para durar generaciones.">Custom gates, railings, pergolas &amp; structural fabrication. Welded in El Paso. Built to last generations.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
-        <a href="#gallery" class="btn btn-outline">View Our Work</a>
+        <a href="#contact" class="btn btn-primary" data-en="Get a Free Estimate" data-es="Cotización Gratis">Get a Free Estimate</a>
+        <a href="#gallery" class="btn btn-outline" data-en="View Our Work" data-es="Ver Nuestro Trabajo">View Our Work</a>
       </div>
       <div class="hero-badges">
         <div class="hero-badge">
           <strong>30+</strong>
-          <span>Years Experience</span>
+          <span data-en="Years Experience" data-es="Años de Experiencia">Years Experience</span>
         </div>
         <div class="hero-badge">
           <strong>100%</strong>
-          <span>Custom Fabrication</span>
+          <span data-en="Custom Fabrication" data-es="Fabricación a Medida">Custom Fabrication</span>
         </div>
         <div class="hero-badge">
           <strong>FREE</strong>
-          <span>Estimates</span>
+          <span data-en="Estimates" data-es="Presupuestos">Estimates</span>
         </div>
         <div class="hero-badge">
           <strong>ELP</strong>
-          <span>Local & Trusted</span>
+          <span data-en="Local &amp; Trusted" data-es="Local y de Confianza">Local &amp; Trusted</span>
         </div>
       </div>
     </div>
   </div>
   <div class="scroll-hint">
     <div class="scroll-arrow"></div>
-    <span>Scroll</span>
+    <span data-en="Scroll" data-es="Bajar">Scroll</span>
   </div>
 </section>
 
@@ -789,23 +855,23 @@ footer {
       <div class="about-img-wrap reveal-left">
         <div class="about-img-frame">
           <img src="images/IMG_6060.jpg" alt="Woven steel panel — artisan fabrication" loading="lazy">
-          <div class="about-tag">El Paso's Iron Craftsmen</div>
+          <div class="about-tag" data-en="El Paso's Iron Craftsmen" data-es="Artesanos del Hierro en El Paso">El Paso's Iron Craftsmen</div>
         </div>
       </div>
       <div class="about-text reveal-right">
-        <p class="section-label">Our Story</p>
-        <h2>Forged in<br><span class="gold">El Paso</span></h2>
-        <p class="highlight">Family-owned and operated for over 30 years, we've built everything from custom driveway gates to heavy-duty commercial structures across the Borderland.</p>
-        <p>Sal's Ironworks started with one welder, one vision, and a relentless commitment to quality. Three decades later, that same commitment drives every weld we make. We don't cut corners — we cut steel.</p>
-        <p>From residential gates and pool railings to commercial pergolas and industrial fabrication, we take on projects that require real craftsmanship. Our work speaks louder than any slogan.</p>
+        <p class="section-label" data-en="Our Story" data-es="Nuestra Historia">Our Story</p>
+        <h2><span data-en="Forged in" data-es="Forjados en">Forged in</span><br><span class="gold">El Paso</span></h2>
+        <p class="highlight" data-en="Family-owned and operated for over 30 years, we've built everything from custom driveway gates to heavy-duty commercial structures across the Borderland." data-es="Empresa familiar con más de 30 años de trayectoria — hemos construido desde portones residenciales a la medida hasta estructuras comerciales de gran envergadura en toda la región fronteriza.">Family-owned and operated for over 30 years, we've built everything from custom driveway gates to heavy-duty commercial structures across the Borderland.</p>
+        <p data-en="Sal's Ironworks started with one welder, one vision, and a relentless commitment to quality. Three decades later, that same commitment drives every weld we make. We don't cut corners — we cut steel." data-es="Sal's Ironworks comenzó con un soldador, una visión y un compromiso inquebrantable con la calidad. Tres décadas después, ese mismo compromiso guía cada soldadura que hacemos. No tomamos atajos — cortamos acero.">Sal's Ironworks started with one welder, one vision, and a relentless commitment to quality. Three decades later, that same commitment drives every weld we make. We don't cut corners — we cut steel.</p>
+        <p data-en="From residential gates and pool railings to commercial pergolas and industrial fabrication, we take on projects that require real craftsmanship. Our work speaks louder than any slogan." data-es="Desde portones residenciales y barandales para alberca hasta pérgolas comerciales y fabricación industrial, asumimos proyectos que exigen verdadera artesanía. Nuestro trabajo habla más fuerte que cualquier eslogan.">From residential gates and pool railings to commercial pergolas and industrial fabrication, we take on projects that require real craftsmanship. Our work speaks louder than any slogan.</p>
         <div style="margin-top:2rem;">
-          <a href="#contact" class="btn btn-primary">Start Your Project</a>
+          <a href="#contact" class="btn btn-primary" data-en="Start Your Project" data-es="Inicia Tu Proyecto">Start Your Project</a>
         </div>
         <div class="about-stats">
-          <div class="stat-cell"><div class="num">30+</div><div class="lbl">Years in Business</div></div>
-          <div class="stat-cell"><div class="num">500+</div><div class="lbl">Projects Completed</div></div>
-          <div class="stat-cell"><div class="num">3</div><div class="lbl">Markets Served</div></div>
-          <div class="stat-cell"><div class="num">100%</div><div class="lbl">Custom Work</div></div>
+          <div class="stat-cell"><div class="num">30+</div><div class="lbl" data-en="Years in Business" data-es="Años en el Negocio">Years in Business</div></div>
+          <div class="stat-cell"><div class="num">500+</div><div class="lbl" data-en="Projects Completed" data-es="Proyectos Completados">Projects Completed</div></div>
+          <div class="stat-cell"><div class="num">3</div><div class="lbl" data-en="Markets Served" data-es="Mercados Atendidos">Markets Served</div></div>
+          <div class="stat-cell"><div class="num">100%</div><div class="lbl" data-en="Custom Work" data-es="Trabajo Personalizado">Custom Work</div></div>
         </div>
       </div>
     </div>
@@ -825,81 +891,81 @@ footer {
 <section id="services">
   <div class="container">
     <div class="services-header reveal">
-      <p class="section-label" style="justify-content:center;">What We Build</p>
-      <h2>Our <span class="gold">Services</span></h2>
-      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;">Every project is custom. Every piece is fabricated in-house. No off-the-shelf solutions — just ironwork built exactly the way you want it.</p>
+      <p class="section-label" style="justify-content:center;" data-en="What We Build" data-es="Lo Que Construimos">What We Build</p>
+      <h2><span data-en="Our" data-es="Nuestros">Our</span> <span class="gold" data-en="Services" data-es="Servicios">Services</span></h2>
+      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;" data-en="Every project is custom. Every piece is fabricated in-house. No off-the-shelf solutions — just ironwork built exactly the way you want it." data-es="Cada proyecto es único. Cada pieza se fabrica en nuestro taller. Sin soluciones genéricas — solo herrería construida exactamente como usted la quiere.">Every project is custom. Every piece is fabricated in-house. No off-the-shelf solutions — just ironwork built exactly the way you want it.</p>
     </div>
     <div class="services-grid">
 
       <div class="service-card reveal">
-        <div class="service-tag">Residential / Commercial</div>
+        <div class="service-tag" data-en="Residential / Commercial" data-es="Residencial / Comercial">Residential / Commercial</div>
         <div class="service-card-img">
           <img src="images/IMG_0939.jpg" alt="Custom iron gates" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l-2-2H5L3 8v10a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          <h3>Gates</h3>
-          <p>Driveway gates, pedestrian entry gates, automated or manual. Custom designs in wrought iron, steel, and mixed materials.</p>
+          <h3 data-en="Gates" data-es="Portones">Gates</h3>
+          <p data-en="Driveway gates, pedestrian entry gates, automated or manual. Custom designs in wrought iron, steel, and mixed materials." data-es="Portones de entrada vehicular y peatonal, automáticos o manuales. Diseños personalizados en hierro forjado, acero y materiales mixtos.">Driveway gates, pedestrian entry gates, automated or manual. Custom designs in wrought iron, steel, and mixed materials.</p>
         </div>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-tag">Interior / Exterior</div>
+        <div class="service-tag" data-en="Interior / Exterior" data-es="Interior / Exterior">Interior / Exterior</div>
         <div class="service-card-img">
           <img src="images/IMG_2342.jpg" alt="Custom iron railings" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <h3>Railings</h3>
-          <p>Stair railings, balcony rails, pool barriers, and handrails. Built to code, designed to last, finished to impress.</p>
+          <h3 data-en="Railings" data-es="Barandales">Railings</h3>
+          <p data-en="Stair railings, balcony rails, pool barriers, and handrails. Built to code, designed to last, finished to impress." data-es="Barandales para escaleras, balcones, cercas de alberca y pasamanos. Construidos a código, diseñados para durar, terminados para impresionar.">Stair railings, balcony rails, pool barriers, and handrails. Built to code, designed to last, finished to impress.</p>
         </div>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-tag">Pool / Patio / Deck</div>
+        <div class="service-tag" data-en="Pool / Patio / Deck" data-es="Alberca / Patio / Terraza">Pool / Patio / Deck</div>
         <div class="service-card-img">
           <img src="images/IMG_1163.jpg" alt="Steel pergola structures" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="3"/><line x1="5" y1="6" x2="5" y2="21"/><line x1="19" y1="6" x2="19" y2="21"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          <h3>Pergolas</h3>
-          <p>Steel-framed pergolas engineered for El Paso's climate. From sleek modern structures to ornate custom designs.</p>
+          <h3 data-en="Pergolas" data-es="Pérgolas">Pergolas</h3>
+          <p data-en="Steel-framed pergolas engineered for El Paso's climate. From sleek modern structures to ornate custom designs." data-es="Pérgolas con estructura de acero diseñadas para el clima de El Paso. Desde estructuras modernas y elegantes hasta diseños ornamentales a la medida.">Steel-framed pergolas engineered for El Paso's climate. From sleek modern structures to ornate custom designs.</p>
         </div>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-tag">Property & Security</div>
+        <div class="service-tag" data-en="Property &amp; Security" data-es="Propiedad y Seguridad">Property &amp; Security</div>
         <div class="service-card-img">
           <img src="images/IMG_0097.jpg" alt="Iron fencing" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h3>Fencing</h3>
-          <p>Perimeter fencing, pool enclosures, decorative yard fencing. Security and curb appeal in one custom solution.</p>
+          <h3 data-en="Fencing" data-es="Cercas">Fencing</h3>
+          <p data-en="Perimeter fencing, pool enclosures, decorative yard fencing. Security and curb appeal in one custom solution." data-es="Cercas perimetrales, cercos para alberca, cercas decorativas para jardín. Seguridad y estética en una sola solución personalizada.">Perimeter fencing, pool enclosures, decorative yard fencing. Security and curb appeal in one custom solution.</p>
         </div>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-tag">Industrial / Commercial</div>
+        <div class="service-tag" data-en="Industrial / Commercial" data-es="Industrial / Comercial">Industrial / Commercial</div>
         <div class="service-card-img">
           <img src="images/IMG_4343.jpg" alt="Structural steel fabrication" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="6" height="18"/><rect x="9" y="3" width="6" height="18"/><rect x="16" y="3" width="6" height="18"/></svg>
-          <h3>Structural Steel</h3>
-          <p>Stairs, platforms, frames, and custom structural elements for commercial and industrial applications.</p>
+          <h3 data-en="Structural Steel" data-es="Acero Estructural">Structural Steel</h3>
+          <p data-en="Stairs, platforms, frames, and custom structural elements for commercial and industrial applications." data-es="Escaleras, plataformas, marcos y elementos estructurales a la medida para aplicaciones comerciales e industriales.">Stairs, platforms, frames, and custom structural elements for commercial and industrial applications.</p>
         </div>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-tag">One-of-a-Kind</div>
+        <div class="service-tag" data-en="One-of-a-Kind" data-es="Único en su Tipo">One-of-a-Kind</div>
         <div class="service-card-img">
           <img src="images/IMG_6270.jpg" alt="Custom fabrication" loading="lazy">
         </div>
         <div class="service-card-body">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          <h3>Custom Fabrication</h3>
-          <p>Artistic panels, decorative elements, commercial signage frames, and one-of-a-kind ironwork — if you can dream it, we can weld it.</p>
+          <h3 data-en="Custom Fabrication" data-es="Fabricación a Medida">Custom Fabrication</h3>
+          <p data-en="Artistic panels, decorative elements, commercial signage frames, and one-of-a-kind ironwork — if you can dream it, we can weld it." data-es="Paneles artísticos, elementos decorativos, marcos para letreros comerciales y herrería única — si puedes imaginarlo, nosotros lo soldamos.">Artistic panels, decorative elements, commercial signage frames, and one-of-a-kind ironwork — if you can dream it, we can weld it.</p>
         </div>
       </div>
 
@@ -913,185 +979,185 @@ footer {
 <section id="gallery">
   <div class="container">
     <div class="gallery-header reveal">
-      <p class="section-label" style="justify-content:center;">Real Projects. Real Steel.</p>
-      <h2>Project <span class="gold">Gallery</span></h2>
-      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;">Every photo is a project we built. No stock images. No renders. Just iron.</p>
+      <p class="section-label" style="justify-content:center;" data-en="Real Projects. Real Steel." data-es="Proyectos Reales. Acero Real.">Real Projects. Real Steel.</p>
+      <h2><span data-en="Project" data-es="Galería de">Project</span> <span class="gold" data-en="Gallery" data-es="Proyectos">Gallery</span></h2>
+      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;" data-en="Every photo is a project we built. No stock images. No renders. Just iron." data-es="Cada foto es un proyecto que construimos. Sin fotos de banco. Sin renders. Solo hierro.">Every photo is a project we built. No stock images. No renders. Just iron.</p>
     </div>
 
     <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="gates">Gates</button>
-      <button class="filter-btn" data-filter="railings">Railings</button>
-      <button class="filter-btn" data-filter="structural">Structural</button>
-      <button class="filter-btn" data-filter="fences">Fences</button>
-      <button class="filter-btn" data-filter="custom">Custom</button>
+      <button class="filter-btn active" data-filter="all" data-en="All Work" data-es="Todo">All Work</button>
+      <button class="filter-btn" data-filter="gates" data-en="Gates" data-es="Portones">Gates</button>
+      <button class="filter-btn" data-filter="railings" data-en="Railings" data-es="Barandales">Railings</button>
+      <button class="filter-btn" data-filter="structural" data-en="Structural" data-es="Estructural">Structural</button>
+      <button class="filter-btn" data-filter="fences" data-en="Fences" data-es="Cercas">Fences</button>
+      <button class="filter-btn" data-filter="custom" data-en="Custom" data-es="Personalizado">Custom</button>
     </div>
 
     <div class="gallery-grid" id="gallery-grid">
       <!-- GATES -->
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0938.jpg" data-label="Custom Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0938.jpg" data-label="Custom Gate" data-label-es="Portón Personalizado">
         <img src="images/IMG_0938.jpg" alt="Custom iron gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0939.jpg" data-label="Mixed Wood/Metal Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0939.jpg" data-label="Mixed Wood/Metal Gate" data-label-es="Portón Madera/Metal">
         <img src="images/IMG_0939.jpg" alt="Mixed wood metal gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1027.jpg" data-label="Custom Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1027.jpg" data-label="Custom Gate" data-label-es="Portón Personalizado">
         <img src="images/IMG_1027.jpg" alt="Custom iron gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1793.jpg" data-label="Driveway Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1793.jpg" data-label="Driveway Gate" data-label-es="Portón Vehicular">
         <img src="images/IMG_1793.jpg" alt="Driveway gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3836.jpg" data-label="Decorative Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3836.jpg" data-label="Decorative Gate" data-label-es="Portón Decorativo">
         <img src="images/IMG_3836.jpg" alt="Decorative gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3807.jpg" data-label="Entry Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3807.jpg" data-label="Entry Gate" data-label-es="Portón de Entrada">
         <img src="images/IMG_3807.jpg" alt="Entry gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4180.jpg" data-label="Custom Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4180.jpg" data-label="Custom Gate" data-label-es="Portón Personalizado">
         <img src="images/IMG_4180.jpg" alt="Custom gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4811.jpg" data-label="Iron Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4811.jpg" data-label="Iron Gate" data-label-es="Portón de Hierro">
         <img src="images/IMG_4811.jpg" alt="Iron gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4812.jpg" data-label="Gate Detail">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4812.jpg" data-label="Gate Detail" data-label-es="Detalle de Portón">
         <img src="images/IMG_4812.jpg" alt="Gate detail" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5088.jpg" data-label="Custom Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5088.jpg" data-label="Custom Gate" data-label-es="Portón Personalizado">
         <img src="images/IMG_5088.jpg" alt="Custom gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5090.jpg" data-label="Gate Work">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5090.jpg" data-label="Gate Work" data-label-es="Trabajo de Portón">
         <img src="images/IMG_5090.jpg" alt="Gate work" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5376.jpg" data-label="Custom Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5376.jpg" data-label="Custom Gate" data-label-es="Portón Personalizado">
         <img src="images/IMG_5376.jpg" alt="Custom gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
-      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5510.jpg" data-label="Iron Gate">
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5510.jpg" data-label="Iron Gate" data-label-es="Portón de Hierro">
         <img src="images/IMG_5510.jpg" alt="Iron gate" loading="lazy">
-        <div class="gallery-item-overlay"><span>Gates</span></div>
+        <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
       </div>
       <!-- RAILINGS -->
-      <div class="gallery-item" data-cat="railings" data-src="images/IMG_1710.jpg" data-label="Custom Railing">
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_1710.jpg" data-label="Custom Railing" data-label-es="Barandal Personalizado">
         <img src="images/IMG_1710.jpg" alt="Custom railing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Railings</span></div>
+        <div class="gallery-item-overlay"><span data-en="Railings" data-es="Barandales">Railings</span></div>
       </div>
-      <div class="gallery-item" data-cat="railings" data-src="images/IMG_2342.jpg" data-label="Stair Railing">
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_2342.jpg" data-label="Stair Railing" data-label-es="Barandal de Escalera">
         <img src="images/IMG_2342.jpg" alt="Stair railing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Railings</span></div>
+        <div class="gallery-item-overlay"><span data-en="Railings" data-es="Barandales">Railings</span></div>
       </div>
-      <div class="gallery-item" data-cat="railings" data-src="images/IMG_6684.jpg" data-label="Iron Railing">
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_6684.jpg" data-label="Iron Railing" data-label-es="Barandal de Hierro">
         <img src="images/IMG_6684.jpg" alt="Iron railing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Railings</span></div>
+        <div class="gallery-item-overlay"><span data-en="Railings" data-es="Barandales">Railings</span></div>
       </div>
-      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4021.jpg" data-label="Balcony Railing">
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4021.jpg" data-label="Balcony Railing" data-label-es="Barandal de Balcón">
         <img src="images/IMG_4021.jpg" alt="Balcony railing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Railings</span></div>
+        <div class="gallery-item-overlay"><span data-en="Railings" data-es="Barandales">Railings</span></div>
       </div>
-      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4425.jpg" data-label="Custom Railing">
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4425.jpg" data-label="Custom Railing" data-label-es="Barandal Personalizado">
         <img src="images/IMG_4425.jpg" alt="Custom railing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Railings</span></div>
+        <div class="gallery-item-overlay"><span data-en="Railings" data-es="Barandales">Railings</span></div>
       </div>
       <!-- STRUCTURAL/PERGOLAS -->
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1035.jpg" data-label="Structural Steel">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1035.jpg" data-label="Structural Steel" data-label-es="Acero Estructural">
         <img src="images/IMG_1035.jpg" alt="Structural steel" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1038.jpg" data-label="Steel Structure">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1038.jpg" data-label="Steel Structure" data-label-es="Estructura de Acero">
         <img src="images/IMG_1038.jpg" alt="Steel structure" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1110.jpg" data-label="Pergola">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1110.jpg" data-label="Pergola" data-label-es="Pérgola">
         <img src="images/IMG_1110.jpg" alt="Pergola" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1112.jpg" data-label="Steel Pergola">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1112.jpg" data-label="Steel Pergola" data-label-es="Pérgola de Acero">
         <img src="images/IMG_1112.jpg" alt="Steel pergola" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1161.jpg" data-label="Pergola Structure">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1161.jpg" data-label="Pergola Structure" data-label-es="Estructura de Pérgola">
         <img src="images/IMG_1161.jpg" alt="Pergola structure" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1163.jpg" data-label="Slatted Pergola over Pool">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1163.jpg" data-label="Slatted Pergola over Pool" data-label-es="Pérgola Sobre Alberca">
         <img src="images/IMG_1163.jpg" alt="Slatted pergola over pool" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4448.jpg" data-label="Poolside Pergola">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4448.jpg" data-label="Poolside Pergola" data-label-es="Pérgola junto a Alberca">
         <img src="images/IMG_4448.jpg" alt="Poolside pergola with mountains" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_5795.jpg" data-label="Commercial Pergola">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_5795.jpg" data-label="Commercial Pergola" data-label-es="Pérgola Comercial">
         <img src="images/IMG_5795.jpg" alt="Commercial pergola" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3929.jpg" data-label="Steel Structure">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3929.jpg" data-label="Steel Structure" data-label-es="Estructura de Acero">
         <img src="images/IMG_3929.jpg" alt="Steel structure" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3931.jpg" data-label="Steel Frame">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3931.jpg" data-label="Steel Frame" data-label-es="Marco de Acero">
         <img src="images/IMG_3931.jpg" alt="Steel frame" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3957.jpg" data-label="Structural Work">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3957.jpg" data-label="Structural Work" data-label-es="Trabajo Estructural">
         <img src="images/IMG_3957.jpg" alt="Structural work" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3958.jpg" data-label="Steel Construction">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3958.jpg" data-label="Steel Construction" data-label-es="Construcción de Acero">
         <img src="images/IMG_3958.jpg" alt="Steel construction" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3960.jpg" data-label="Structural Fabrication">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3960.jpg" data-label="Structural Fabrication" data-label-es="Fabricación Estructural">
         <img src="images/IMG_3960.jpg" alt="Structural fabrication" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3996.jpg" data-label="Steel Work">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3996.jpg" data-label="Steel Work" data-label-es="Trabajo en Acero">
         <img src="images/IMG_3996.jpg" alt="Steel work" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
-      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4343.jpg" data-label="Rooftop Deck & Staircase">
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4343.jpg" data-label="Rooftop Deck &amp; Staircase" data-label-es="Terraza y Escalera">
         <img src="images/IMG_4343.jpg" alt="Rooftop deck staircase" loading="lazy">
-        <div class="gallery-item-overlay"><span>Structural</span></div>
+        <div class="gallery-item-overlay"><span data-en="Structural" data-es="Estructural">Structural</span></div>
       </div>
       <!-- FENCES -->
-      <div class="gallery-item" data-cat="fences" data-src="images/IMG_0097.jpg" data-label="Iron Fence">
+      <div class="gallery-item" data-cat="fences" data-src="images/IMG_0097.jpg" data-label="Iron Fence" data-label-es="Cerca de Hierro">
         <img src="images/IMG_0097.jpg" alt="Iron fence" loading="lazy">
-        <div class="gallery-item-overlay"><span>Fences</span></div>
+        <div class="gallery-item-overlay"><span data-en="Fences" data-es="Cercas">Fences</span></div>
       </div>
-      <div class="gallery-item" data-cat="fences" data-src="images/IMG_4667.jpg" data-label="Custom Fencing">
+      <div class="gallery-item" data-cat="fences" data-src="images/IMG_4667.jpg" data-label="Custom Fencing" data-label-es="Cerca Personalizada">
         <img src="images/IMG_4667.jpg" alt="Custom fencing" loading="lazy">
-        <div class="gallery-item-overlay"><span>Fences</span></div>
+        <div class="gallery-item-overlay"><span data-en="Fences" data-es="Cercas">Fences</span></div>
       </div>
       <!-- CUSTOM FABRICATION -->
-      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4724.jpg" data-label="Custom Fabrication">
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4724.jpg" data-label="Custom Fabrication" data-label-es="Fabricación a Medida">
         <img src="images/IMG_4724.jpg" alt="Custom fabrication" loading="lazy">
-        <div class="gallery-item-overlay"><span>Custom</span></div>
+        <div class="gallery-item-overlay"><span data-en="Custom" data-es="Personalizado">Custom</span></div>
       </div>
-      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4811.jpg" data-label="Custom Ironwork">
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4811.jpg" data-label="Custom Ironwork" data-label-es="Herrería Personalizada">
         <img src="images/IMG_4811.jpg" alt="Custom ironwork" loading="lazy">
-        <div class="gallery-item-overlay"><span>Custom</span></div>
+        <div class="gallery-item-overlay"><span data-en="Custom" data-es="Personalizado">Custom</span></div>
       </div>
-      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6060.jpg" data-label="Woven Steel Panel">
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6060.jpg" data-label="Woven Steel Panel" data-label-es="Panel de Acero Tejido">
         <img src="images/IMG_6060.jpg" alt="Woven steel panel artisan work" loading="lazy">
-        <div class="gallery-item-overlay"><span>Custom</span></div>
+        <div class="gallery-item-overlay"><span data-en="Custom" data-es="Personalizado">Custom</span></div>
       </div>
-      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6270.jpg" data-label="Custom Work">
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6270.jpg" data-label="Custom Work" data-label-es="Trabajo Personalizado">
         <img src="images/IMG_6270.jpg" alt="Custom fabrication" loading="lazy">
-        <div class="gallery-item-overlay"><span>Custom</span></div>
+        <div class="gallery-item-overlay"><span data-en="Custom" data-es="Personalizado">Custom</span></div>
       </div>
-      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4543.jpg" data-label="Custom Fabrication">
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4543.jpg" data-label="Custom Fabrication" data-label-es="Fabricación a Medida">
         <img src="images/IMG_4543.jpg" alt="Custom fabrication" loading="lazy">
-        <div class="gallery-item-overlay"><span>Custom</span></div>
+        <div class="gallery-item-overlay"><span data-en="Custom" data-es="Personalizado">Custom</span></div>
       </div>
     </div>
   </div>
@@ -1120,34 +1186,34 @@ footer {
 <section id="why">
   <div class="container">
     <div class="why-header reveal">
-      <p class="section-label" style="justify-content:center;">The Difference</p>
-      <h2>Why Choose <span class="gold">Sal's</span></h2>
+      <p class="section-label" style="justify-content:center;" data-en="The Difference" data-es="La Diferencia">The Difference</p>
+      <h2><span data-en="Why Choose" data-es="¿Por Qué">Why Choose</span> <span class="gold">Sal's</span></h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75"/><path d="M21 20v-2a4 4 0 00-3-3.87"/></svg>
-        <h3>30+ Years Experience</h3>
-        <p>Three decades of real-world fabrication across residential, commercial, and industrial projects in El Paso and the Borderland.</p>
+        <h3 data-en="30+ Years Experience" data-es="Más de 30 Años de Experiencia">30+ Years Experience</h3>
+        <p data-en="Three decades of real-world fabrication across residential, commercial, and industrial projects in El Paso and the Borderland." data-es="Tres décadas de fabricación real en proyectos residenciales, comerciales e industriales en El Paso y la región fronteriza.">Three decades of real-world fabrication across residential, commercial, and industrial projects in El Paso and the Borderland.</p>
       </div>
       <div class="why-card reveal">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        <h3>100% Custom Work</h3>
-        <p>No catalog. No cookie-cutter. Every piece is fabricated in-house to your exact specifications — designed around your space and vision.</p>
+        <h3 data-en="100% Custom Work" data-es="100% Trabajo Personalizado">100% Custom Work</h3>
+        <p data-en="No catalog. No cookie-cutter. Every piece is fabricated in-house to your exact specifications — designed around your space and vision." data-es="Sin catálogo. Sin moldes. Cada pieza se fabrica en nuestro taller con sus especificaciones exactas — diseñada alrededor de su espacio y visión.">No catalog. No cookie-cutter. Every piece is fabricated in-house to your exact specifications — designed around your space and vision.</p>
       </div>
       <div class="why-card reveal">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        <h3>Competitive Pricing</h3>
-        <p>Local shop, no middleman. You get master-craftsman quality at prices that actually make sense for El Paso homeowners and contractors.</p>
+        <h3 data-en="Competitive Pricing" data-es="Precios Competitivos">Competitive Pricing</h3>
+        <p data-en="Local shop, no middleman. You get master-craftsman quality at prices that actually make sense for El Paso homeowners and contractors." data-es="Taller local, sin intermediarios. Obtienes calidad de maestro artesano a precios que realmente tienen sentido para los propietarios y contratistas de El Paso.">Local shop, no middleman. You get master-craftsman quality at prices that actually make sense for El Paso homeowners and contractors.</p>
       </div>
       <div class="why-card reveal">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2"/><path d="M3 12c1 0 2-1 2-2S4 8 3 8 1 9 1 10s1 2 2 2"/><path d="M12 21c0-1-1-2-2-2s-2 1-2 2 1 2 2 2 2-1 2-2"/><path d="M12 3c0 1-1 2-2 2S8 4 8 3s1-2 2-2 2 1 2 2"/></svg>
-        <h3>Free Estimates</h3>
-        <p>No commitment required. Tell us your project and we'll show up, measure it, and give you a straight quote — no pressure, no games.</p>
+        <h3 data-en="Free Estimates" data-es="Presupuestos Gratis">Free Estimates</h3>
+        <p data-en="No commitment required. Tell us your project and we'll show up, measure it, and give you a straight quote — no pressure, no games." data-es="Sin compromiso. Cuéntanos tu proyecto y nos presentamos, tomamos medidas y te damos un presupuesto directo — sin presión, sin juegos.">No commitment required. Tell us your project and we'll show up, measure it, and give you a straight quote — no pressure, no games.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:3.5rem;" class="reveal">
-      <p style="color:var(--muted);margin-bottom:1.5rem;font-size:1.1rem;">"Built Strong. Built Right." — That's not marketing copy. That's what we show up to do every single day.</p>
-      <a href="#contact" class="btn btn-primary">Request Your Free Estimate</a>
+      <p style="color:var(--muted);margin-bottom:1.5rem;font-size:1.1rem;" data-en="&quot;Built Strong. Built Right.&quot; — That's not marketing copy. That's what we show up to do every single day." data-es="&quot;Construido Fuerte. Construido Bien.&quot; — Eso no es publicidad. Es lo que hacemos cada día.">"Built Strong. Built Right." — That's not marketing copy. That's what we show up to do every single day.</p>
+      <a href="#contact" class="btn btn-primary" data-en="Request Your Free Estimate" data-es="Solicita Tu Presupuesto Gratis">Request Your Free Estimate</a>
     </div>
   </div>
 </section>
@@ -1167,16 +1233,16 @@ footer {
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info reveal-left">
-        <p class="section-label">Get In Touch</p>
-        <h2>Start Your<br><span class="gold">Project</span></h2>
-        <p>Have a project in mind? We'd love to hear about it. Call us, shoot an email, or fill out the form — we'll get back to you fast.</p>
+        <p class="section-label" data-en="Get In Touch" data-es="Contáctenos">Get In Touch</p>
+        <h2><span data-en="Start Your" data-es="Inicia Tu">Start Your</span><br><span class="gold" data-en="Project" data-es="Proyecto">Project</span></h2>
+        <p data-en="Have a project in mind? We'd love to hear about it. Call us, shoot an email, or fill out the form — we'll get back to you fast." data-es="¿Tienes un proyecto en mente? Nos encantaría escucharte. Llámanos, manda un correo o llena el formulario — te respondemos rápido.">Have a project in mind? We'd love to hear about it. Call us, shoot an email, or fill out the form — we'll get back to you fast.</p>
         <div class="contact-items">
           <div class="contact-item">
             <div class="contact-item-icon">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </div>
             <div class="contact-item-text">
-              <strong>Phone</strong>
+              <strong data-en="Phone" data-es="Teléfono">Phone</strong>
               <a href="tel:9157404901">(915) 740-4901</a>
             </div>
           </div>
@@ -1185,7 +1251,7 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <div class="contact-item-text">
-              <strong>Email</strong>
+              <strong data-en="Email" data-es="Correo">Email</strong>
               <a href="mailto:ssamaniego1859@hotmail.com">ssamaniego1859@hotmail.com</a>
             </div>
           </div>
@@ -1194,8 +1260,8 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="contact-item-text">
-              <strong>Service Area</strong>
-              <span>El Paso, TX & Surrounding Borderland</span>
+              <strong data-en="Service Area" data-es="Área de Servicio">Service Area</strong>
+              <span data-en="El Paso, TX &amp; Surrounding Borderland" data-es="El Paso, TX y Áreas Circundantes">El Paso, TX &amp; Surrounding Borderland</span>
             </div>
           </div>
           <div class="contact-item">
@@ -1203,48 +1269,48 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div class="contact-item-text">
-              <strong>Response Time</strong>
-              <span>Typically within 24 hours</span>
+              <strong data-en="Response Time" data-es="Tiempo de Respuesta">Response Time</strong>
+              <span data-en="Typically within 24 hours" data-es="Generalmente dentro de 24 horas">Typically within 24 hours</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="contact-form reveal-right">
-        <p class="section-label">Free Estimate</p>
+        <p class="section-label" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</p>
         <form id="contact-form" onsubmit="handleFormSubmit(event)">
           <div class="form-2col">
             <div class="form-group">
-              <label for="f-name">Name</label>
-              <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+              <label for="f-name" data-en="Name" data-es="Nombre">Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Your Name" required data-ph-en="Your Name" data-ph-es="Tu Nombre">
             </div>
             <div class="form-group">
-              <label for="f-phone">Phone</label>
+              <label for="f-phone" data-en="Phone" data-es="Teléfono">Phone</label>
               <input type="tel" id="f-phone" name="phone" placeholder="(915) 555-0000">
             </div>
           </div>
           <div class="form-group">
-            <label for="f-email">Email</label>
-            <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+            <label for="f-email" data-en="Email" data-es="Correo Electrónico">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="you@example.com" required data-ph-en="you@example.com" data-ph-es="tu@correo.com">
           </div>
           <div class="form-group">
-            <label for="f-service">Service Needed</label>
+            <label for="f-service" data-en="Service Needed" data-es="Servicio Requerido">Service Needed</label>
             <select id="f-service" name="service">
-              <option value="">— Select a Service —</option>
-              <option>Custom Gates</option>
-              <option>Railings</option>
-              <option>Pergola / Shade Structure</option>
-              <option>Fencing</option>
-              <option>Structural Steel</option>
-              <option>Custom Fabrication</option>
-              <option>Multiple / Not Sure</option>
+              <option value="" data-en="— Select a Service —" data-es="— Selecciona un Servicio —">— Select a Service —</option>
+              <option data-en="Custom Gates" data-es="Portones Personalizados">Custom Gates</option>
+              <option data-en="Railings" data-es="Barandales">Railings</option>
+              <option data-en="Pergola / Shade Structure" data-es="Pérgola / Estructura de Sombra">Pergola / Shade Structure</option>
+              <option data-en="Fencing" data-es="Cercas">Fencing</option>
+              <option data-en="Structural Steel" data-es="Acero Estructural">Structural Steel</option>
+              <option data-en="Custom Fabrication" data-es="Fabricación a Medida">Custom Fabrication</option>
+              <option data-en="Multiple / Not Sure" data-es="Varios / No Estoy Seguro">Multiple / Not Sure</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="f-msg">Project Details</label>
-            <textarea id="f-msg" name="message" placeholder="Tell us about your project — dimensions, style, timeline..."></textarea>
+            <label for="f-msg" data-en="Project Details" data-es="Detalles del Proyecto">Project Details</label>
+            <textarea id="f-msg" name="message" placeholder="Tell us about your project — dimensions, style, timeline..." data-ph-en="Tell us about your project — dimensions, style, timeline..." data-ph-es="Cuéntanos sobre tu proyecto — dimensiones, estilo, tiempo estimado..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary form-submit">Send Request</button>
+          <button type="submit" class="btn btn-primary form-submit" data-en="Send Request" data-es="Enviar Solicitud">Send Request</button>
         </form>
       </div>
     </div>
@@ -1300,18 +1366,18 @@ footer {
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SAL'S <span>IRONWORKS</span></div>
-        <div class="footer-tagline">Built Strong. Built Right. — El Paso, TX</div>
+        <div class="footer-tagline" data-en="Built Strong. Built Right. — El Paso, TX" data-es="Construido Fuerte. Construido Bien. — El Paso, TX">Built Strong. Built Right. — El Paso, TX</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+        <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a></li>
+        <li><a href="#why" data-en="Why Us" data-es="Por Qué">Why Us</a></li>
+        <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
         <li><a href="tel:9157404901">(915) 740-4901</a></li>
       </ul>
     </div>
-    <div class="footer-copy">
+    <div class="footer-copy" data-en="&copy; 2026 Sal's Ironworks and Fabrication — El Paso, TX &nbsp;|&nbsp; salsironworks.com &nbsp;|&nbsp; All rights reserved." data-es="&copy; 2026 Sal's Ironworks and Fabrication — El Paso, TX &nbsp;|&nbsp; salsironworks.com &nbsp;|&nbsp; Todos los derechos reservados.">
       &copy; 2026 Sal's Ironworks and Fabrication — El Paso, TX &nbsp;|&nbsp; salsironworks.com &nbsp;|&nbsp; All rights reserved.
     </div>
   </div>
@@ -1321,6 +1387,52 @@ footer {
      JAVASCRIPT
      ============================================= -->
 <script>
+/* =============================================
+   LANGUAGE TOGGLE
+   ============================================= */
+(function() {
+  var currentLang = localStorage.getItem('sal-lang') || 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('sal-lang', lang);
+    document.documentElement.lang = lang;
+
+    // Toggle button states
+    ['desktop', 'mobile'].forEach(function(suffix) {
+      var btnEn = document.getElementById('btn-en-' + suffix);
+      var btnEs = document.getElementById('btn-es-' + suffix);
+      if (!btnEn || !btnEs) return;
+      btnEn.classList.toggle('active', lang === 'en');
+      btnEs.classList.toggle('active', lang === 'es');
+    });
+
+    // Translate all [data-en] / [data-es] elements
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      var text = el.getAttribute('data-' + lang);
+      if (text === null) return;
+      // Use innerHTML so &amp; entities etc. render correctly
+      el.innerHTML = text;
+    });
+
+    // Select option text (options need special handling)
+    document.querySelectorAll('select option[data-' + lang + ']').forEach(function(opt) {
+      opt.textContent = opt.getAttribute('data-' + lang);
+    });
+
+    // Placeholders
+    document.querySelectorAll('[data-ph-' + lang + ']').forEach(function(el) {
+      el.placeholder = el.getAttribute('data-ph-' + lang);
+    });
+  }
+
+  // Expose globally so onclick works
+  window.setLang = applyLang;
+
+  // Apply on load
+  applyLang(currentLang);
+})();
+
 /* ---- Sparks Canvas ---- */
 (function() {
   const canvas = document.getElementById('sparks-canvas');
@@ -1348,7 +1460,6 @@ footer {
   }
   function tick() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Add new particles
     if (particles.length < 60 && Math.random() < 0.35) {
       particles.push(createParticle());
     }
@@ -1356,7 +1467,7 @@ footer {
     for (const p of particles) {
       p.x += p.vx;
       p.y += p.vy;
-      p.vy += 0.04; // gravity
+      p.vy += 0.04;
       p.vx *= 0.99;
       p.life -= p.decay;
       const alpha = p.life * 0.85;
@@ -1385,7 +1496,6 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
-  // Active nav link
   let current = '';
   sections.forEach(sec => {
     if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
@@ -1417,7 +1527,7 @@ filterBtns.forEach(btn => {
       if (filter === 'all' || item.dataset.cat === filter) {
         item.classList.remove('hidden');
         item.style.animation = 'none';
-        item.offsetHeight; // reflow
+        item.offsetHeight;
         item.style.animation = 'fadeIn .4s ease forwards';
       } else {
         item.classList.add('hidden');
@@ -1496,9 +1606,9 @@ document.querySelectorAll('.service-card.reveal, .why-card.reveal').forEach((el,
 function handleFormSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending…';
+  const lang = localStorage.getItem('sal-lang') || 'en';
+  btn.textContent = lang === 'es' ? 'Enviando…' : 'Sending…';
   btn.disabled = true;
-  // Mailto fallback
   const name = document.getElementById('f-name').value;
   const phone = document.getElementById('f-phone').value;
   const email = document.getElementById('f-email').value;
@@ -1509,7 +1619,7 @@ function handleFormSubmit(e) {
   );
   setTimeout(() => {
     window.location.href = `mailto:ssamaniego1859@hotmail.com?subject=Estimate Request — ${service || 'Ironworks'}&body=${body}`;
-    btn.textContent = 'Request Sent!';
+    btn.textContent = lang === 'es' ? '¡Solicitud Enviada!' : 'Request Sent!';
     btn.style.background = '#3d6b3d';
   }, 600);
 }
