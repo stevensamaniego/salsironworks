@@ -1,1888 +1,1523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sal's Ironworks and Fabrication | El Paso, Texas</title>
-  <meta name="description" content="Sal's Ironworks and Fabrication — Built Strong. Built Right. Custom ironworks, structural fabrication, railings, gates, and fences serving El Paso and surrounding areas." />
-  <meta name="keywords" content="ironworks El Paso, custom gates El Paso, metal fabrication Texas, railings fences El Paso, structural fabrication" />
-  <meta name="author" content="Sal's Ironworks and Fabrication" />
-  <meta property="og:title" content="Sal's Ironworks and Fabrication" />
-  <meta property="og:description" content="Built Strong. Built Right. Custom ironworks, structural fabrication, railings, gates, and fences. El Paso, Texas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://salsironworks.com" />
-  <meta property="og:image" content="https://salsironworks.com/og-image.jpg" />
-  <link rel="canonical" href="https://salsironworks.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
-  <style>
-    /* =========================================================
-       RESET & BASE
-    ========================================================= */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      background-color: #111;
-      color: #e0d8cc;
-      font-family: 'Barlow', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sal's Ironworks & Fabrication | El Paso, TX</title>
+<meta name="description" content="Custom ironworks, gates, railings, pergolas & structural fabrication in El Paso, TX. 30+ years experience. Built Strong. Built Right.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black:    #0d0d0d;
+  --dark:     #1a1614;
+  --steel:    #2a2a2a;
+  --steel-lt: #3d3d3d;
+  --rust:     #8b4513;
+  --gold:     #c4952b;
+  --gold-lt:  #d4a63a;
+  --warm:     #e8e0d4;
+  --muted:    #a09080;
+  --white:    #f5f0ea;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--black);
+  color: var(--warm);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    /* =========================================================
-       CSS CUSTOM PROPERTIES
-    ========================================================= */
-    :root {
-      --gold: #c4952b;
-      --gold-light: #e0b84a;
-      --gold-dark: #9a7020;
-      --bg-dark: #111111;
-      --bg-mid: #191919;
-      --bg-card: #1e1e1e;
-      --bg-accent: #232323;
-      --steel: #8a9099;
-      --steel-light: #b8c0cc;
-      --text: #e0d8cc;
-      --text-muted: #8a8070;
-      --border: rgba(196, 149, 43, 0.2);
-      --glow: rgba(196, 149, 43, 0.15);
-      --spark: #ff8c00;
-      --section-pad: clamp(4rem, 8vw, 8rem);
-    }
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+h1 { font-size: clamp(3.5rem, 9vw, 8rem); }
+h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
 
-    /* =========================================================
-       TEXTURE & PATTERN UTILITIES
-    ========================================================= */
-    .hex-bg {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V18L28 2l28 16v32z' fill='none' stroke='rgba(196,149,43,0.07)' stroke-width='1'/%3E%3Cpath d='M28 100L0 84V52l28-16 28 16v32z' fill='none' stroke='rgba(196,149,43,0.07)' stroke-width='1'/%3E%3C/svg%3E");
-    }
-    .diamond-plate {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40z' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='0.5'/%3E%3Cpath d='M10 20 L20 10 L30 20 L20 30z' fill='rgba(255,255,255,0.015)'/%3E%3C/svg%3E");
-    }
-    .brushed-steel {
-      background: repeating-linear-gradient(
-        90deg,
-        rgba(255,255,255,0) 0px,
-        rgba(255,255,255,0.008) 1px,
-        rgba(255,255,255,0) 2px,
-        rgba(255,255,255,0.005) 3px,
-        rgba(255,255,255,0) 4px
-      );
-    }
+/* =============================================
+   REUSABLE
+   ============================================= */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.section-label::before { content: ''; display: block; width: 2rem; height: 2px; background: var(--gold); }
+.gold { color: var(--gold-lt); }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 1.05rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border: none; cursor: pointer;
+  text-decoration: none; transition: all .25s;
+  position: relative; overflow: hidden;
+}
+.btn-primary {
+  background: var(--gold); color: var(--black);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,149,43,.4); }
+.btn-outline {
+  background: transparent; color: var(--warm);
+  border: 2px solid rgba(228,224,212,.3);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* =========================================================
-       TYPOGRAPHY
-    ========================================================= */
-    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; line-height: 1.1; }
-    h4, h5, h6 { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; }
-    .display-xl { font-size: clamp(3.5rem, 10vw, 8rem); color: #fff; }
-    .display-lg { font-size: clamp(2.5rem, 6vw, 5rem); }
-    .display-md { font-size: clamp(1.8rem, 4vw, 3rem); }
-    .section-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-    .gold { color: var(--gold); }
-    .muted { color: var(--text-muted); }
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-right.visible { opacity: 1; transform: none; }
 
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.9rem 2.2rem;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.08);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .btn:hover::after { opacity: 1; }
-    .btn-primary {
-      background: var(--gold);
-      color: #111;
-      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    }
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(196,149,43,0.4);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    }
-    .btn-outline:hover {
-      background: rgba(196,149,43,0.1);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(196,149,43,0.2);
-    }
+/* =============================================
+   NAV
+   ============================================= */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0;
+  transition: background .35s, padding .35s;
+}
+#navbar.scrolled {
+  background: rgba(13,13,13,.97);
+  border-bottom: 1px solid rgba(196,149,43,.2);
+  backdrop-filter: blur(10px);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; padding: 0 2rem;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem; letter-spacing: 0.08em;
+  color: var(--white); text-decoration: none;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.nav-logo span { color: var(--gold); }
+.nav-logo svg { width: 36px; height: 36px; }
+.nav-links {
+  display: flex; align-items: center; gap: 0.25rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(232,224,212,.75); text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  transition: color .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-cta { margin-left: 1rem; }
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 26px; height: 2px;
+  background: var(--warm); transition: all .3s;
+}
+.mobile-menu {
+  display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+  background: rgba(13,13,13,.98); z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; letter-spacing: 0.08em;
+  color: var(--warm); text-decoration: none;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
 
-    /* =========================================================
-       GOLD DIVIDER
-    ========================================================= */
-    .gold-rule {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-      margin: 1rem 0 2rem;
-    }
-    .gold-rule-center { margin: 1rem auto 2rem; }
+/* =============================================
+   HERO
+   ============================================= */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/IMG_0939.jpg') center/cover no-repeat;
+  transform: scale(1.05);
+  transition: transform 12s ease-out;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    rgba(13,13,13,.92) 0%,
+    rgba(26,22,20,.78) 50%,
+    rgba(13,13,13,.88) 100%);
+}
+/* Diamond plate texture overlay */
+.hero-texture {
+  position: absolute; inset: 0; opacity: 0.035;
+  background-image:
+    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+  background-size: 8px 8px;
+}
+/* Grain noise */
+.grain {
+  position: absolute; inset: 0; opacity: .06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 8rem 2rem 4rem;
+  max-width: 900px; margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; flex: 0 0 3rem; height: 1px; background: var(--gold);
+}
+.hero-title { color: var(--white); margin-bottom: 0.3rem; }
+.hero-title .accent { color: var(--gold); display: block; }
+.hero-sub {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--muted); margin: 1.5rem 0 2.5rem;
+  font-weight: 300; max-width: 560px;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-badges {
+  display: flex; gap: 3rem; margin-top: 4rem;
+  flex-wrap: wrap;
+}
+.hero-badge {
+  text-align: left;
+  border-left: 2px solid var(--gold);
+  padding-left: 1rem;
+}
+.hero-badge strong {
+  display: block; font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; color: var(--gold-lt); line-height: 1;
+}
+.hero-badge span {
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+}
+/* Sparks canvas */
+#sparks-canvas {
+  position: absolute; inset: 0; pointer-events: none; z-index: 1;
+}
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  z-index: 2; opacity: .5;
+}
+.scroll-hint span {
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted);
+}
+.scroll-arrow {
+  width: 1px; height: 40px; background: var(--gold);
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: .2; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 1.25rem 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.3s, padding 0.3s, box-shadow 0.3s;
-    }
-    #navbar.scrolled {
-      background: rgba(14, 14, 14, 0.97);
-      backdrop-filter: blur(12px);
-      padding: 0.85rem 5%;
-      box-shadow: 0 2px 30px rgba(0,0,0,0.6), 0 1px 0 rgba(196,149,43,0.15);
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .nav-logo-icon {
-      width: 42px;
-      height: 42px;
-    }
-    .nav-logo-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.08em;
-      color: #fff;
-      line-height: 1;
-    }
-    .nav-logo-text span {
-      display: block;
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--steel-light);
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0; right: 0;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-cta { margin-left: 1rem; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--gold);
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10,10,10,0.98);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .mobile-menu.open { display: flex; opacity: 1; }
-    .mobile-menu a {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      letter-spacing: 0.1em;
-      color: #fff;
-      transition: color 0.2s;
-    }
-    .mobile-menu a:hover { color: var(--gold); }
+/* =============================================
+   RIVET DIVIDER
+   ============================================= */
+.rivet-divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; padding: 1.5rem 0;
+  overflow: hidden;
+}
+.rivet-divider::before, .rivet-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,149,43,.4));
+}
+.rivet-divider::after {
+  background: linear-gradient(270deg, transparent, rgba(196,149,43,.4));
+}
+.rivet-row {
+  display: flex; gap: 0.6rem;
+}
+.rivet {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d4a63a, #7a5a10);
+  box-shadow: 0 0 4px rgba(196,149,43,.5), inset 0 1px 2px rgba(255,255,255,.2);
+}
 
-    /* =========================================================
-       HERO
-    ========================================================= */
-    #hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--bg-dark);
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 60%, rgba(196,149,43,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(255,140,0,0.04) 0%, transparent 60%),
-        linear-gradient(180deg, #0a0a0a 0%, #141414 40%, #111 100%);
-    }
-    .hero-bg-pattern {
-      position: absolute;
-      inset: 0;
-      opacity: 1;
-    }
-    .hero-gate-svg {
-      position: absolute;
-      right: -5%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(300px, 55vw, 750px);
-      opacity: 0.07;
-      pointer-events: none;
-    }
-    .hero-sparks {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    .spark {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--spark);
-      box-shadow: 0 0 6px 2px rgba(255,140,0,0.8);
-      animation: sparkFloat var(--dur, 4s) ease-in-out infinite var(--delay, 0s);
-      opacity: 0;
-    }
-    @keyframes sparkFloat {
-      0% { opacity: 0; transform: translate(0,0) scale(1); }
-      20% { opacity: 1; }
-      80% { opacity: 0.6; }
-      100% { opacity: 0; transform: translate(var(--tx, 40px), var(--ty, -80px)) scale(0.3); }
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 0 5%;
-      padding-top: 100px;
-      max-width: 900px;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow-line {
-      width: 50px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .hero-eyebrow-text {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.8rem, 11vw, 9rem);
-      line-height: 0.92;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-    .hero-title .line2 {
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(196,149,43,0.7);
-    }
-    .hero-tagline {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin: 1.5rem 0 0.5rem;
-    }
-    .hero-tagline-accent {
-      display: inline-block;
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
-      vertical-align: middle;
-      margin: 0 0.75rem;
-    }
-    .hero-sub {
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      color: var(--steel);
-      max-width: 520px;
-      margin: 1.25rem 0 2.5rem;
-      line-height: 1.7;
-    }
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-    .hero-phone {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--steel-light);
-      transition: color 0.2s;
-    }
-    .hero-phone:hover { color: var(--gold); }
-    .hero-phone svg { flex-shrink: 0; }
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 2;
-    }
-    .hero-scroll span {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .scroll-mouse {
-      width: 24px;
-      height: 38px;
-      border: 1px solid rgba(196,149,43,0.4);
-      border-radius: 12px;
-      position: relative;
-    }
-    .scroll-mouse::before {
-      content: '';
-      position: absolute;
-      top: 6px; left: 50%;
-      transform: translateX(-50%);
-      width: 3px; height: 7px;
-      background: var(--gold);
-      border-radius: 2px;
-      animation: scrollBounce 2s ease-in-out infinite;
-    }
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-      50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
-    }
-    /* Gold bottom border on hero */
-    #hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-    }
+/* =============================================
+   ABOUT
+   ============================================= */
+#about {
+  background: var(--dark);
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 14px, rgba(255,255,255,.012) 14px, rgba(255,255,255,.012) 15px),
+    repeating-linear-gradient(-45deg, transparent, transparent 14px, rgba(255,255,255,.012) 14px, rgba(255,255,255,.012) 15px);
+  padding: 7rem 0;
+  position: relative; overflow: hidden;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img-frame {
+  position: relative;
+}
+.about-img-frame img {
+  width: 100%; display: block;
+  filter: brightness(.85) contrast(1.1) saturate(.9);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+}
+.about-img-frame::before {
+  content: '';
+  position: absolute; inset: -6px;
+  border: 2px solid var(--gold);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+  opacity: .4; z-index: 1;
+}
+.about-tag {
+  position: absolute; bottom: -1rem; right: -1rem;
+  background: var(--gold); color: var(--black);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem; letter-spacing: 0.08em;
+  padding: 0.7rem 1.2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: rgba(196,149,43,.15);
+  margin-top: 2.5rem;
+  border: 1px solid rgba(196,149,43,.15);
+}
+.stat-cell {
+  background: var(--dark);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+.stat-cell .num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; color: var(--gold-lt); line-height: 1;
+}
+.stat-cell .lbl {
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
+}
+.about-text p {
+  color: rgba(232,224,212,.75); margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+.about-text .highlight {
+  font-size: 1.2rem; color: var(--warm);
+  border-left: 3px solid var(--gold); padding-left: 1.2rem;
+  margin: 2rem 0;
+}
 
-    /* =========================================================
-       MARQUEE STRIP
-    ========================================================= */
-    .marquee-strip {
-      background: var(--gold);
-      padding: 0.7rem 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 0;
-      animation: marquee 25s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-track span {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #111;
-      padding: 0 2.5rem;
-    }
-    .marquee-dot {
-      color: rgba(0,0,0,0.4);
-      padding: 0 !important;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+/* =============================================
+   SERVICES
+   ============================================= */
+#services {
+  background: var(--black);
+  padding: 7rem 0;
+}
+.services-header { text-align: center; margin-bottom: 4rem; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  position: relative; overflow: hidden;
+  background: var(--steel);
+  cursor: default;
+  transition: transform .3s;
+}
+.service-card:hover { transform: translateY(-4px); }
+.service-card-img {
+  height: 220px; overflow: hidden;
+}
+.service-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s; filter: brightness(.75) saturate(.85);
+}
+.service-card:hover .service-card-img img { transform: scale(1.06); filter: brightness(.9) saturate(1); }
+.service-card-body {
+  padding: 1.5rem;
+  border-top: 2px solid var(--gold);
+  background: linear-gradient(180deg, var(--steel) 0%, var(--dark) 100%);
+}
+.service-icon {
+  width: 40px; height: 40px; margin-bottom: 0.8rem;
+  color: var(--gold);
+}
+.service-card h3 {
+  font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--white);
+}
+.service-card p { font-size: 0.9rem; color: var(--muted); }
+.service-tag {
+  position: absolute; top: 1rem; right: 1rem;
+  background: rgba(13,13,13,.85);
+  border: 1px solid rgba(196,149,43,.4);
+  color: var(--gold); font-size: 0.65rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+}
 
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
-    section { padding: var(--section-pad) 5%; }
-    .section-header { margin-bottom: 3.5rem; }
-    .section-header-center { text-align: center; }
-    .section-header-center .gold-rule { margin: 1rem auto 2rem; }
+/* =============================================
+   GALLERY
+   ============================================= */
+#gallery {
+  background: var(--dark);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.018) 39px, rgba(255,255,255,.018) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.018) 39px, rgba(255,255,255,.018) 40px);
+  padding: 7rem 0;
+}
+.gallery-header { text-align: center; margin-bottom: 3rem; }
+.filter-bar {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 3rem;
+}
+.filter-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  background: transparent; border: 1px solid rgba(196,149,43,.3);
+  color: var(--muted); padding: 0.5rem 1.2rem;
+  cursor: pointer; transition: all .2s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--gold); border-color: var(--gold);
+  color: var(--black);
+}
+.gallery-grid {
+  columns: 4; column-gap: 0.75rem;
+}
+@media (max-width: 1100px) { .gallery-grid { columns: 3; } }
+@media (max-width: 720px) { .gallery-grid { columns: 2; } }
+@media (max-width: 480px) { .gallery-grid { columns: 1; } }
+.gallery-item {
+  break-inside: avoid; margin-bottom: 0.75rem;
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(196,149,43,.15);
+  transition: opacity .35s, transform .35s;
+}
+.gallery-item.hidden { display: none; }
+.gallery-item img {
+  width: 100%; display: block;
+  filter: brightness(.8) contrast(1.05) saturate(.85);
+  transition: transform .5s, filter .5s;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.05) saturate(1.1);
+}
+.gallery-item-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,.85) 0%, transparent 50%);
+  opacity: 0; transition: opacity .3s;
+  display: flex; align-items: flex-end; padding: 1rem;
+}
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+.gallery-item-overlay span {
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+}
+/* Gold glow on hover */
+.gallery-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 2px var(--gold);
+  opacity: 0; transition: opacity .3s;
+}
+.gallery-item:hover::after { opacity: 1; }
 
-    /* =========================================================
-       SERVICES
-    ========================================================= */
-    #services { background: var(--bg-mid); }
-    .services-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: end;
-      margin-bottom: 3.5rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5px;
-    }
-    .service-card {
-      background: var(--bg-card);
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-bottom: 3px solid transparent;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(196,149,43,0.3), transparent);
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-      border-bottom-color: var(--gold);
-    }
-    .service-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(196,149,43,0.03) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .service-card:hover::after { opacity: 1; }
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      margin-bottom: 1.5rem;
-      color: var(--gold);
-    }
-    .service-card h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 0.75rem;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--steel);
-      line-height: 1.7;
-    }
-    .service-market-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-top: 1.25rem;
-    }
-    .market-tag {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: rgba(196,149,43,0.08);
-      border: 1px solid rgba(196,149,43,0.2);
-      padding: 0.2rem 0.6rem;
-    }
-    .service-number {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
-      color: rgba(196,149,43,0.06);
-      line-height: 1;
-      pointer-events: none;
-    }
+/* =============================================
+   LIGHTBOX
+   ============================================= */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,.96);
+  align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 90vw; max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid rgba(196,149,43,.25);
+}
+.lb-close {
+  position: absolute; top: 1.5rem; right: 2rem;
+  font-size: 2rem; color: var(--warm); cursor: pointer;
+  background: none; border: none; line-height: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  transition: color .2s;
+}
+.lb-close:hover { color: var(--gold); }
+.lb-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(26,22,20,.8); border: 1px solid rgba(196,149,43,.3);
+  color: var(--gold); font-size: 1.8rem;
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.lb-arrow:hover { background: var(--gold); color: var(--black); }
+.lb-prev { left: 1.5rem; }
+.lb-next { right: 1.5rem; }
+.lb-counter {
+  position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.15em;
+  color: var(--muted);
+}
 
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-    #about {
-      background: var(--bg-dark);
-      position: relative;
-      overflow: hidden;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .about-visual {
-      position: relative;
-    }
-    .about-plate {
-      width: 100%;
-      aspect-ratio: 4/5;
-      background: var(--bg-card);
-      position: relative;
-      overflow: hidden;
-    }
-    .about-plate-inner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .about-star-large {
-      width: 160px;
-      height: 160px;
-      color: rgba(196,149,43,0.12);
-    }
-    .about-plate-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem;
-      color: rgba(196,149,43,0.06);
-      letter-spacing: 0.1em;
-      text-align: center;
-      line-height: 1;
-    }
-    .about-accent-box {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 140px;
-      height: 140px;
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    .about-accent-box .number {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      color: #111;
-      line-height: 1;
-    }
-    .about-accent-box .label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.7);
-    }
-    .about-border-accent {
-      position: absolute;
-      top: 20px;
-      left: -20px;
-      width: calc(100% + 20px);
-      height: calc(100% + 0px);
-      border: 1px solid rgba(196,149,43,0.15);
-      pointer-events: none;
-    }
-    .about-content p {
-      color: var(--steel-light);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-    }
-    .about-content p:last-of-type { margin-bottom: 2rem; }
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid rgba(196,149,43,0.15);
-    }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-    }
-    .stat-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: block;
-      margin-top: 0.25rem;
-    }
+/* =============================================
+   WHY CHOOSE US
+   ============================================= */
+#why {
+  background: var(--black);
+  padding: 7rem 0;
+  position: relative; overflow: hidden;
+}
+#why::before {
+  content: 'IRONWORKS';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(8rem, 18vw, 18rem);
+  color: rgba(196,149,43,.04);
+  letter-spacing: 0.1em; white-space: nowrap;
+  pointer-events: none;
+}
+.why-header { text-align: center; margin-bottom: 4rem; position: relative; z-index: 1; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative; z-index: 1;
+}
+.why-card {
+  background: var(--dark);
+  border: 1px solid rgba(196,149,43,.12);
+  border-top: 3px solid var(--gold);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color .3s, transform .3s;
+}
+.why-card:hover {
+  border-top-color: var(--gold-lt);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(196,149,43,.15);
+}
+.why-icon {
+  width: 52px; height: 52px;
+  margin: 0 auto 1.2rem;
+  color: var(--gold);
+}
+.why-card h3 {
+  font-size: 1.4rem; margin-bottom: 0.6rem; color: var(--white);
+}
+.why-card p { font-size: 0.9rem; color: var(--muted); }
 
-    /* =========================================================
-       WHY CHOOSE US
-    ========================================================= */
-    #why {
-      background: var(--bg-accent);
-      position: relative;
-      overflow: hidden;
-    }
-    #why .hex-bg {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    .why-card {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: rgba(14,14,14,0.6);
-      border: 1px solid rgba(196,149,43,0.1);
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .why-card:hover {
-      border-color: rgba(196,149,43,0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 1px rgba(196,149,43,0.1);
-    }
-    .why-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 1.5rem;
-      position: relative;
-    }
-    .why-icon-bg {
-      position: absolute;
-      inset: 0;
-      background: var(--gold);
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      opacity: 0.1;
-    }
-    .why-icon svg {
-      position: relative;
-      z-index: 1;
-      color: var(--gold);
-    }
-    .why-card h4 {
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      color: #fff;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-    .why-card p {
-      font-size: 0.875rem;
-      color: var(--steel);
-      line-height: 1.7;
-    }
+/* =============================================
+   CONTACT
+   ============================================= */
+#contact {
+  background: var(--dark);
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 14px, rgba(255,255,255,.01) 14px, rgba(255,255,255,.01) 15px),
+    repeating-linear-gradient(-45deg, transparent, transparent 14px, rgba(255,255,255,.01) 14px, rgba(255,255,255,.01) 15px);
+  padding: 7rem 0;
+}
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: start;
+}
+.contact-info h2 { margin-bottom: 1rem; }
+.contact-info p { color: rgba(232,224,212,.7); margin-bottom: 2rem; }
+.contact-items { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-item {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+}
+.contact-item-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: rgba(196,149,43,.12);
+  border: 1px solid rgba(196,149,43,.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.contact-item-icon svg { width: 22px; height: 22px; }
+.contact-item-text strong {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 0.75rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem;
+}
+.contact-item-text a {
+  color: var(--warm); text-decoration: none; font-size: 1.05rem;
+  transition: color .2s;
+}
+.contact-item-text a:hover { color: var(--gold); }
+.contact-item-text span { color: var(--warm); font-size: 1.05rem; }
+.contact-form {
+  background: rgba(26,22,20,.6);
+  border: 1px solid rgba(196,149,43,.15);
+  padding: 2.5rem;
+}
+.form-group { margin-bottom: 1.2rem; }
+.form-group label {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 0.75rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; background: rgba(13,13,13,.8);
+  border: 1px solid rgba(196,149,43,.2);
+  color: var(--warm); padding: 0.75rem 1rem;
+  font-family: 'Barlow', sans-serif; font-size: 1rem;
+  outline: none; transition: border-color .2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+.form-group textarea { height: 120px; resize: vertical; }
+.form-group select { cursor: pointer; }
+.form-group select option { background: var(--dark); }
+.form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-submit { width: 100%; margin-top: 0.5rem; justify-content: center; font-size: 1.1rem; padding: 1rem; }
 
-    /* =========================================================
-       GALLERY
-    ========================================================= */
-    #gallery { background: var(--bg-dark); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto auto;
-      gap: 4px;
-    }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 1;
-      background: var(--bg-card);
-      cursor: pointer;
-    }
-    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: 1; }
-    .gallery-item:nth-child(2) { aspect-ratio: 1; }
-    .gallery-item:nth-child(3) { aspect-ratio: 1; }
-    .gallery-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-    .gallery-placeholder svg { color: rgba(196,149,43,0.2); }
-    .gallery-placeholder-text {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: rgba(196,149,43,0.3);
-    }
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.008) 0px,
-        rgba(255,255,255,0.008) 1px,
-        transparent 1px,
-        transparent 8px
-      );
-    }
-    .gallery-coming-soon {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, rgba(196,149,43,0.05) 0%, transparent 60%);
-    }
-    .gallery-cs-badge {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: rgba(10,10,10,0.8);
-      border: 1px solid rgba(196,149,43,0.3);
-      padding: 0.4rem 1rem;
-    }
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: var(--black);
+  border-top: 1px solid rgba(196,149,43,.15);
+  padding: 3rem 0 1.5rem;
+}
+.footer-inner {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 2rem;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 0.08em; color: var(--white);
+}
+.footer-logo span { color: var(--gold); }
+.footer-tagline { color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
+.footer-links {
+  display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap;
+}
+.footer-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-skyline { width: 100%; overflow: hidden; margin-bottom: 1.5rem; }
+.footer-skyline svg { width: 100%; height: 80px; display: block; }
+.footer-copy {
+  text-align: center; color: rgba(160,144,128,.5);
+  font-size: 0.8rem; letter-spacing: 0.05em;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(196,149,43,.08);
+}
 
-    /* =========================================================
-       CTA BANNER
-    ========================================================= */
-    #cta-banner {
-      background: var(--gold);
-      padding: 4rem 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    #cta-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40z' fill='none' stroke='rgba(0,0,0,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
-    }
-    .cta-banner-inner {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .cta-banner-text h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: #111;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .cta-banner-text p {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      color: rgba(0,0,0,0.65);
-    }
-    .btn-dark {
-      background: #111;
-      color: var(--gold);
-      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    }
-    .btn-dark:hover {
-      background: #1a1a1a;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-    #contact { background: var(--bg-mid); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .contact-info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .contact-icon-wrap {
-      width: 48px;
-      height: 48px;
-      background: rgba(196,149,43,0.08);
-      border: 1px solid rgba(196,149,43,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--gold);
-    }
-    .contact-info-item h5 {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-    .contact-info-item a,
-    .contact-info-item p {
-      font-size: 1rem;
-      color: var(--steel-light);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .contact-info-item a:hover { color: var(--gold); }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: var(--bg-card);
-      border: 1px solid rgba(196,149,43,0.15);
-      color: var(--text);
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.95rem;
-      padding: 0.85rem 1rem;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      resize: none;
-      -webkit-appearance: none;
-    }
-    .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c4952b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-      cursor: pointer;
-    }
-    .form-group select option { background: #1e1e1e; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(196,149,43,0.08);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(138,128,112,0.6); }
-    .form-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-    footer {
-      background: #0a0a0a;
-      position: relative;
-      overflow: hidden;
-      padding-bottom: 0;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-    }
-    .footer-main {
-      padding: 4rem 5% 3rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-    }
-    .footer-brand-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 0.08em;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .footer-brand-sub {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.35em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .footer-desc {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    .footer-col h5 {
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-    }
-    .footer-col ul li {
-      margin-bottom: 0.7rem;
-    }
-    .footer-col ul li a {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: var(--steel-light); }
-    .footer-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-    .footer-contact-item a {
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-    .footer-contact-item a:hover { color: var(--gold); }
-    .footer-contact-item svg { color: var(--gold); flex-shrink: 0; }
-    /* El Paso skyline */
-    .footer-skyline {
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-    .footer-skyline svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .footer-bottom {
-      background: #060606;
-      padding: 1.25rem 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .footer-bottom p {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-    .footer-bottom a { color: var(--gold); transition: opacity 0.2s; }
-    .footer-bottom a:hover { opacity: 0.8; }
-
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      .services-intro { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about-visual { max-width: 400px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .footer-main { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-      .footer-brand { grid-column: span 2; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-item:nth-child(1) { grid-column: span 2; }
-    }
-    @media (max-width: 600px) {
-      .form-row { grid-template-columns: 1fr; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-      .footer-main { grid-template-columns: 1fr; }
-      .footer-brand { grid-column: span 1; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item:nth-child(1) { grid-column: span 1; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
-      .cta-banner-inner { flex-direction: column; }
-    }
-  </style>
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .hero-badges { gap: 1.5rem; }
+  .form-2col { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <a href="#hero" class="nav-logo" aria-label="Sal's Ironworks Home">
-      <!-- Logo Icon: Texas star in gate arch -->
-      <svg class="nav-logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1" y="1" width="40" height="40" rx="2" stroke="#c4952b" stroke-width="1.5" fill="rgba(196,149,43,0.06)"/>
-        <path d="M4 42 Q4 28 21 18 Q38 28 38 42" stroke="#c4952b" stroke-width="1.5" fill="none"/>
-        <polygon points="21,8 22.8,13.5 28.5,13.5 23.8,16.8 25.7,22.3 21,19 16.3,22.3 18.2,16.8 13.5,13.5 19.2,13.5" fill="#c4952b" opacity="0.9"/>
-        <line x1="4" y1="28" x2="4" y2="40" stroke="#c4952b" stroke-width="1.5"/>
-        <line x1="38" y1="28" x2="38" y2="40" stroke="#c4952b" stroke-width="1.5"/>
-        <line x1="4" y1="40" x2="38" y2="40" stroke="#c4952b" stroke-width="1.5"/>
+<!-- =============================================
+     NAVBAR
+     ============================================= -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="16" width="28" height="4" rx="1" fill="#c4952b"/>
+        <rect x="14" y="4" width="4" height="28" rx="1" fill="#c4952b"/>
+        <circle cx="18" cy="18" r="5" fill="none" stroke="#c4952b" stroke-width="2"/>
       </svg>
-      <div class="nav-logo-text">
-        Sal's Ironworks
-        <span>El Paso, Texas</span>
-      </div>
+      SAL'S <span>IRONWORKS</span>
     </a>
-    <ul class="nav-links" role="list">
-      <li><a href="#services">Services</a></li>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#why">Why Us</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn btn-primary nav-cta" style="padding:.65rem 1.4rem;font-size:.8rem;">Free Quote</a>
-    <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu" tabindex="0">
+    <a href="tel:9157404901" class="btn btn-primary nav-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      (915) 740-4901
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <a href="#services" class="mobile-link">Services</a>
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#why" class="mobile-link">Why Us</a>
-    <a href="#gallery" class="mobile-link">Gallery</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-    <a href="tel:9157404901" style="font-family:'Oswald';font-size:1rem;letter-spacing:.15em;color:var(--gold);margin-top:1rem;">(915) 740-4901</a>
+    </button>
   </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mm-link">About</a>
+  <a href="#services" class="mm-link">Services</a>
+  <a href="#gallery" class="mm-link">Gallery</a>
+  <a href="#why" class="mm-link">Why Us</a>
+  <a href="#contact" class="mm-link">Contact</a>
+  <a href="tel:9157404901" class="btn btn-primary">(915) 740-4901</a>
+</div>
 
-  <!-- ===================== HERO ===================== -->
-  <section id="hero" aria-label="Hero">
-    <div class="hero-bg hex-bg hero-bg-pattern"></div>
-    <!-- Decorative gate SVG background -->
-    <svg class="hero-gate-svg" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Gate arch -->
-      <path d="M50 700 L50 200 Q50 20 300 20 Q550 20 550 200 L550 700" stroke="white" stroke-width="3" fill="none"/>
-      <!-- Gate bars vertical -->
-      <line x1="100" y1="700" x2="100" y2="250" stroke="white" stroke-width="2"/>
-      <line x1="160" y1="700" x2="160" y2="220" stroke="white" stroke-width="2"/>
-      <line x1="220" y1="700" x2="220" y2="200" stroke="white" stroke-width="2"/>
-      <line x1="300" y1="700" x2="300" y2="80" stroke="white" stroke-width="2.5"/>
-      <line x1="380" y1="700" x2="380" y2="200" stroke="white" stroke-width="2"/>
-      <line x1="440" y1="700" x2="440" y2="220" stroke="white" stroke-width="2"/>
-      <line x1="500" y1="700" x2="500" y2="250" stroke="white" stroke-width="2"/>
-      <!-- Gate bars horizontal -->
-      <line x1="50" y1="400" x2="550" y2="400" stroke="white" stroke-width="1.5"/>
-      <line x1="50" y1="550" x2="550" y2="550" stroke="white" stroke-width="1.5"/>
-      <!-- Spear tops -->
-      <polygon points="100,250 106,270 94,270" fill="white"/>
-      <polygon points="160,220 166,240 154,240" fill="white"/>
-      <polygon points="220,200 226,222 214,222" fill="white"/>
-      <polygon points="300,80 307,106 293,106" fill="white"/>
-      <polygon points="380,200 386,222 374,222" fill="white"/>
-      <polygon points="440,220 446,240 434,240" fill="white"/>
-      <polygon points="500,250 506,270 494,270" fill="white"/>
-      <!-- Star in arch -->
-      <polygon points="300,140 308,165 335,165 313,180 321,205 300,190 279,205 287,180 265,165 292,165" fill="white" opacity="0.9"/>
-      <!-- Decorative scrollwork -->
-      <path d="M200 400 Q220 370 240 400 Q260 430 280 400" stroke="white" stroke-width="1.5" fill="none"/>
-      <path d="M320 400 Q340 370 360 400 Q380 430 400 400" stroke="white" stroke-width="1.5" fill="none"/>
-    </svg>
-
-    <!-- Spark particles -->
-    <div class="hero-sparks" aria-hidden="true">
-      <div class="spark" style="left:62%;top:55%;--dur:5s;--delay:0s;--tx:30px;--ty:-90px;"></div>
-      <div class="spark" style="left:63%;top:57%;--dur:4s;--delay:1.2s;--tx:-20px;--ty:-70px;width:2px;height:2px;"></div>
-      <div class="spark" style="left:65%;top:53%;--dur:6s;--delay:0.5s;--tx:50px;--ty:-100px;background:#ffb347;"></div>
-      <div class="spark" style="left:61%;top:56%;--dur:3.5s;--delay:2s;--tx:-40px;--ty:-60px;width:2px;height:2px;"></div>
-      <div class="spark" style="left:64%;top:58%;--dur:4.5s;--delay:0.8s;--tx:20px;--ty:-110px;background:#ff6600;"></div>
-      <div class="spark" style="left:60%;top:54%;--dur:5.5s;--delay:1.5s;--tx:60px;--ty:-80px;width:2px;height:2px;"></div>
-      <div class="spark" style="left:66%;top:55%;--dur:4s;--delay:3s;--tx:-30px;--ty:-90px;background:#ffb347;"></div>
-      <div class="spark" style="left:62%;top:59%;--dur:3s;--delay:0.3s;--tx:10px;--ty:-120px;"></div>
-    </div>
-
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section id="hero">
+  <canvas id="sparks-canvas"></canvas>
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-texture"></div>
+  <div class="grain"></div>
+  <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow reveal">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">El Paso, Texas · Est. in Craft</span>
-      </div>
-      <h1 class="hero-title reveal" style="transition-delay:.1s">
-        <span>Sal's</span><br>
-        <span>Iron</span><span class="line2">works</span>
+      <div class="hero-eyebrow">El Paso, TX — Est. 30+ Years</div>
+      <h1 class="hero-title">
+        SAL'S
+        <span class="accent">IRONWORKS</span>
       </h1>
-      <p class="hero-tagline reveal" style="transition-delay:.2s">
-        <span class="hero-tagline-accent"></span>
-        Built Strong. Built Right.
-        <span class="hero-tagline-accent"></span>
-      </p>
-      <p class="hero-sub reveal" style="transition-delay:.3s">
-        Custom ironworks, structural fabrication, railings, gates & fences for residential, commercial, and industrial clients throughout the El Paso region.
-      </p>
-      <div class="hero-ctas reveal" style="transition-delay:.4s">
-        <a href="#contact" class="btn btn-primary">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          Get a Free Quote
-        </a>
-        <a href="tel:9157404901" class="hero-phone">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-          (915) 740-4901
-        </a>
+      <p class="hero-sub">Custom gates, railings, pergolas & structural fabrication. Welded in El Paso. Built to last generations.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+        <a href="#gallery" class="btn btn-outline">View Our Work</a>
       </div>
-    </div>
-
-    <div class="hero-scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-mouse"></div>
-    </div>
-  </section>
-
-  <!-- ===================== MARQUEE ===================== -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Custom Ironworks</span><span class="marquee-dot">◆</span>
-      <span>Structural Fabrication</span><span class="marquee-dot">◆</span>
-      <span>Railings</span><span class="marquee-dot">◆</span>
-      <span>Gates</span><span class="marquee-dot">◆</span>
-      <span>Fences</span><span class="marquee-dot">◆</span>
-      <span>Residential</span><span class="marquee-dot">◆</span>
-      <span>Commercial</span><span class="marquee-dot">◆</span>
-      <span>Industrial</span><span class="marquee-dot">◆</span>
-      <span>El Paso, Texas</span><span class="marquee-dot">◆</span>
-      <span>Free Estimates</span><span class="marquee-dot">◆</span>
-      <!-- duplicate for seamless loop -->
-      <span>Custom Ironworks</span><span class="marquee-dot">◆</span>
-      <span>Structural Fabrication</span><span class="marquee-dot">◆</span>
-      <span>Railings</span><span class="marquee-dot">◆</span>
-      <span>Gates</span><span class="marquee-dot">◆</span>
-      <span>Fences</span><span class="marquee-dot">◆</span>
-      <span>Residential</span><span class="marquee-dot">◆</span>
-      <span>Commercial</span><span class="marquee-dot">◆</span>
-      <span>Industrial</span><span class="marquee-dot">◆</span>
-      <span>El Paso, Texas</span><span class="marquee-dot">◆</span>
-      <span>Free Estimates</span><span class="marquee-dot">◆</span>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <strong>30+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="hero-badge">
+          <strong>100%</strong>
+          <span>Custom Fabrication</span>
+        </div>
+        <div class="hero-badge">
+          <strong>FREE</strong>
+          <span>Estimates</span>
+        </div>
+        <div class="hero-badge">
+          <strong>ELP</strong>
+          <span>Local & Trusted</span>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-  <!-- ===================== SERVICES ===================== -->
-  <section id="services" aria-labelledby="services-heading">
-    <div class="services-intro">
-      <div>
-        <span class="section-label">What We Do</span>
-        <h2 class="display-lg" id="services-heading" style="color:#fff">Our <span class="gold">Services</span></h2>
-        <div class="gold-rule"></div>
+<!-- RIVET DIVIDER -->
+<div class="rivet-divider" style="background:var(--dark);">
+  <div class="rivet-row">
+    <div class="rivet"></div><div class="rivet"></div><div class="rivet"></div>
+    <div class="rivet"></div><div class="rivet"></div>
+  </div>
+</div>
+
+<!-- =============================================
+     ABOUT
+     ============================================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal-left">
+        <div class="about-img-frame">
+          <img src="images/IMG_6060.jpg" alt="Woven steel panel — artisan fabrication" loading="lazy">
+          <div class="about-tag">El Paso's Iron Craftsmen</div>
+        </div>
       </div>
-      <p style="color:var(--steel);font-size:1rem;line-height:1.8;">From custom architectural ironwork to heavy structural fabrication, every piece is hand-crafted to spec. We serve residential homeowners, commercial developers, and industrial clients across El Paso and the surrounding region.</p>
+      <div class="about-text reveal-right">
+        <p class="section-label">Our Story</p>
+        <h2>Forged in<br><span class="gold">El Paso</span></h2>
+        <p class="highlight">Family-owned and operated for over 30 years, we've built everything from custom driveway gates to heavy-duty commercial structures across the Borderland.</p>
+        <p>Sal's Ironworks started with one welder, one vision, and a relentless commitment to quality. Three decades later, that same commitment drives every weld we make. We don't cut corners — we cut steel.</p>
+        <p>From residential gates and pool railings to commercial pergolas and industrial fabrication, we take on projects that require real craftsmanship. Our work speaks louder than any slogan.</p>
+        <div style="margin-top:2rem;">
+          <a href="#contact" class="btn btn-primary">Start Your Project</a>
+        </div>
+        <div class="about-stats">
+          <div class="stat-cell"><div class="num">30+</div><div class="lbl">Years in Business</div></div>
+          <div class="stat-cell"><div class="num">500+</div><div class="lbl">Projects Completed</div></div>
+          <div class="stat-cell"><div class="num">3</div><div class="lbl">Markets Served</div></div>
+          <div class="stat-cell"><div class="num">100%</div><div class="lbl">Custom Work</div></div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
+<div class="rivet-divider" style="background:var(--black);">
+  <div class="rivet-row">
+    <div class="rivet"></div><div class="rivet"></div><div class="rivet"></div>
+    <div class="rivet"></div><div class="rivet"></div>
+  </div>
+</div>
+
+<!-- =============================================
+     SERVICES
+     ============================================= -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <p class="section-label" style="justify-content:center;">What We Build</p>
+      <h2>Our <span class="gold">Services</span></h2>
+      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;">Every project is custom. Every piece is fabricated in-house. No off-the-shelf solutions — just ironwork built exactly the way you want it.</p>
+    </div>
     <div class="services-grid">
 
-      <!-- Card 1: Custom Ironworks -->
       <div class="service-card reveal">
-        <span class="service-number">01</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="4" y="4" width="48" height="48" rx="2" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
-          <path d="M14 42 L14 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M28 42 L28 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M42 42 L42 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M10 22 L46 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M10 34 L46 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <polygon points="28,10 31,17 24,17" fill="currentColor"/>
-          <polygon points="14,14 17,21 11,21" fill="currentColor" opacity="0.7"/>
-          <polygon points="42,14 45,21 39,21" fill="currentColor" opacity="0.7"/>
-        </svg>
-        <h3>Custom Ironworks</h3>
-        <p>Bespoke iron designs crafted to your exact specifications. From ornate decorative pieces to functional architectural elements — if you can envision it, we can forge it.</p>
-        <div class="service-market-tags">
-          <span class="market-tag">Residential</span>
-          <span class="market-tag">Commercial</span>
+        <div class="service-tag">Residential / Commercial</div>
+        <div class="service-card-img">
+          <img src="images/IMG_0939.jpg" alt="Custom iron gates" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l-2-2H5L3 8v10a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          <h3>Gates</h3>
+          <p>Driveway gates, pedestrian entry gates, automated or manual. Custom designs in wrought iron, steel, and mixed materials.</p>
         </div>
       </div>
 
-      <!-- Card 2: Structural Fabrication -->
-      <div class="service-card reveal reveal-delay-1">
-        <span class="service-number">02</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="4" y="30" width="48" height="6" fill="currentColor" opacity="0.25" rx="1"/>
-          <rect x="4" y="30" width="48" height="6" stroke="currentColor" stroke-width="1.5" rx="1" fill="none"/>
-          <rect x="10" y="10" width="6" height="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.8"/>
-          <rect x="25" y="10" width="6" height="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.8"/>
-          <rect x="40" y="10" width="6" height="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.8"/>
-          <path d="M13 36 L13 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M28 36 L28 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M43 36 L43 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M9 46 L17 46M24 46 L32 46M39 46 L47 46" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <h3>Structural Fabrication</h3>
-        <p>Heavy-duty steel and iron structural components built to code. Beams, frames, supports, and custom industrial assemblies engineered for lasting performance.</p>
-        <div class="service-market-tags">
-          <span class="market-tag">Industrial</span>
-          <span class="market-tag">Commercial</span>
+      <div class="service-card reveal">
+        <div class="service-tag">Interior / Exterior</div>
+        <div class="service-card-img">
+          <img src="images/IMG_2342.jpg" alt="Custom iron railings" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <h3>Railings</h3>
+          <p>Stair railings, balcony rails, pool barriers, and handrails. Built to code, designed to last, finished to impress.</p>
         </div>
       </div>
 
-      <!-- Card 3: Railings -->
-      <div class="service-card reveal reveal-delay-2">
-        <span class="service-number">03</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M6 12 L50 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M6 44 L50 44" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <line x1="12" y1="12" x2="12" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="20" y1="12" x2="20" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="28" y1="12" x2="28" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="36" y1="12" x2="36" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="44" y1="12" x2="44" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <polygon points="12,12 14.5,18 9.5,18" fill="currentColor" opacity="0.8"/>
-          <polygon points="28,12 30.5,18 25.5,18" fill="currentColor" opacity="0.8"/>
-          <polygon points="44,12 46.5,18 41.5,18" fill="currentColor" opacity="0.8"/>
-        </svg>
-        <h3>Railings</h3>
-        <p>Interior and exterior iron railings — stair rails, balcony guards, deck railings. Combining safety standards with architectural beauty for any property style.</p>
-        <div class="service-market-tags">
-          <span class="market-tag">Residential</span>
-          <span class="market-tag">Commercial</span>
+      <div class="service-card reveal">
+        <div class="service-tag">Pool / Patio / Deck</div>
+        <div class="service-card-img">
+          <img src="images/IMG_1163.jpg" alt="Steel pergola structures" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="3"/><line x1="5" y1="6" x2="5" y2="21"/><line x1="19" y1="6" x2="19" y2="21"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <h3>Pergolas</h3>
+          <p>Steel-framed pergolas engineered for El Paso's climate. From sleek modern structures to ornate custom designs.</p>
         </div>
       </div>
 
-      <!-- Card 4: Gates -->
-      <div class="service-card reveal reveal-delay-3">
-        <span class="service-number">04</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Gate arch left half -->
-          <path d="M6 50 L6 22 Q6 8 28 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <!-- Gate arch right half -->
-          <path d="M50 50 L50 22 Q50 8 28 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <!-- Bars left -->
-          <line x1="12" y1="50" x2="12" y2="26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="18" y1="50" x2="18" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="24" y1="50" x2="24" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- Bars right -->
-          <line x1="44" y1="50" x2="44" y2="26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="38" y1="50" x2="38" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="32" y1="50" x2="32" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- Horizontal rail -->
-          <line x1="6" y1="38" x2="50" y2="38" stroke="currentColor" stroke-width="1.5"/>
-          <!-- Star above center -->
-          <polygon points="28,8 29.5,12.5 34,12.5 30.4,14.8 31.9,19.3 28,16.5 24.1,19.3 25.6,14.8 22,12.5 26.5,12.5" fill="currentColor" opacity="0.9"/>
-        </svg>
-        <h3>Gates</h3>
-        <p>Driveway, pedestrian, and security gates crafted in iron and steel. Swing or slide configurations, with optional automation-ready frames for electric openers.</p>
-        <div class="service-market-tags">
-          <span class="market-tag">Residential</span>
-          <span class="market-tag">Commercial</span>
-          <span class="market-tag">Industrial</span>
+      <div class="service-card reveal">
+        <div class="service-tag">Property & Security</div>
+        <div class="service-card-img">
+          <img src="images/IMG_0097.jpg" alt="Iron fencing" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <h3>Fencing</h3>
+          <p>Perimeter fencing, pool enclosures, decorative yard fencing. Security and curb appeal in one custom solution.</p>
         </div>
       </div>
 
-      <!-- Card 5: Fences -->
-      <div class="service-card reveal reveal-delay-4">
-        <span class="service-number">05</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <line x1="4" y1="42" x2="52" y2="42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4" y1="30" x2="52" y2="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Posts -->
-          <rect x="5" y="18" width="5" height="24" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <rect x="17" y="18" width="5" height="24" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <rect x="29" y="18" width="5" height="24" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <rect x="41" y="18" width="5" height="24" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <!-- Finials -->
-          <polygon points="7.5,18 9.5,14 11.5,18" fill="currentColor"/>
-          <polygon points="19.5,18 21.5,14 23.5,18" fill="currentColor"/>
-          <polygon points="31.5,18 33.5,14 35.5,18" fill="currentColor"/>
-          <polygon points="43.5,18 45.5,14 47.5,18" fill="currentColor"/>
-        </svg>
-        <h3>Fences</h3>
-        <p>Iron and steel fencing for every application — ornamental perimeter fencing, security enclosures, pool fencing. Built to last decades in the West Texas climate.</p>
-        <div class="service-market-tags">
-          <span class="market-tag">Residential</span>
-          <span class="market-tag">Commercial</span>
-          <span class="market-tag">Industrial</span>
+      <div class="service-card reveal">
+        <div class="service-tag">Industrial / Commercial</div>
+        <div class="service-card-img">
+          <img src="images/IMG_4343.jpg" alt="Structural steel fabrication" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="6" height="18"/><rect x="9" y="3" width="6" height="18"/><rect x="16" y="3" width="6" height="18"/></svg>
+          <h3>Structural Steel</h3>
+          <p>Stairs, platforms, frames, and custom structural elements for commercial and industrial applications.</p>
         </div>
       </div>
 
-      <!-- Card 6: Additional Work -->
-      <div class="service-card reveal reveal-delay-5" style="background:rgba(196,149,43,0.04);border:1px solid rgba(196,149,43,0.15);">
-        <span class="service-number">+</span>
-        <svg class="service-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="28" cy="28" r="22" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
-          <circle cx="28" cy="28" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
-          <polygon points="28,14 30.5,22 39,22 32.3,27 34.8,35 28,30 21.2,35 23.7,27 17,22 25.5,22" fill="currentColor"/>
-        </svg>
-        <h3>Custom Projects</h3>
-        <p>Have something unique in mind? From fire pits and furniture to industrial brackets and architectural installations — bring us your vision and we'll make it a reality.</p>
-        <div style="margin-top:1.5rem;">
-          <a href="#contact" class="btn btn-outline" style="padding:.65rem 1.4rem;font-size:.8rem;">Discuss Your Project</a>
+      <div class="service-card reveal">
+        <div class="service-tag">One-of-a-Kind</div>
+        <div class="service-card-img">
+          <img src="images/IMG_6270.jpg" alt="Custom fabrication" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <h3>Custom Fabrication</h3>
+          <p>Artistic panels, decorative elements, commercial signage frames, and one-of-a-kind ironwork — if you can dream it, we can weld it.</p>
         </div>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section id="about" aria-labelledby="about-heading">
-    <div class="about-grid">
-      <div class="about-visual reveal-left">
-        <div class="about-plate diamond-plate">
-          <div class="about-plate-inner">
-            <!-- Large TX star -->
-            <svg class="about-star-large" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <polygon points="100,10 118,68 180,68 130,104 148,162 100,126 52,162 70,104 20,68 82,68" fill="currentColor"/>
-            </svg>
-            <div class="about-plate-text">IRONWORKS<br>FABRICATION</div>
-          </div>
-        </div>
-        <div class="about-accent-box">
-          <span class="number">25+</span>
-          <span class="label">Years of<br>Craft</span>
-        </div>
-        <div class="about-border-accent"></div>
-      </div>
-
-      <div class="about-content reveal-right">
-        <span class="section-label">Our Story</span>
-        <h2 class="display-lg" id="about-heading" style="color:#fff">Family-Owned.<br><span class="gold">El Paso</span> Made.</h2>
-        <div class="gold-rule"></div>
-        <p>Sal's Ironworks and Fabrication was built on a simple belief: if it carries your name, it better be built right. From day one, we've put craftsmanship above all else — measuring twice, welding once, and standing behind every piece we put into the world.</p>
-        <p>We're rooted here in El Paso. This is our home, these are our neighbors, and every job we take — whether it's a single stair railing or a full commercial enclosure — gets the same pride and precision we'd put into our own property.</p>
-        <p>From residential homeowners wanting something beautiful to industrial clients needing something bulletproof, we bring the same standards to every weld and every job site.</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:.5rem;">Start Your Project</a>
-
-        <div class="about-stats">
-          <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-label">Projects Completed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Custom Work</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">EP</span>
-            <span class="stat-label">Texas Proud</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== WHY CHOOSE US ===================== -->
-  <section id="why" aria-labelledby="why-heading">
-    <div class="hex-bg" aria-hidden="true"></div>
-    <div class="section-header section-header-center reveal">
-      <span class="section-label">The Difference</span>
-      <h2 class="display-lg" id="why-heading" style="color:#fff">Why Choose <span class="gold">Sal's</span></h2>
-      <div class="gold-rule gold-rule-center"></div>
-      <p style="max-width:520px;margin:0 auto;color:var(--steel);">We've built a reputation in El Paso on four things. Every client experiences them every time.</p>
+<!-- =============================================
+     GALLERY
+     ============================================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <p class="section-label" style="justify-content:center;">Real Projects. Real Steel.</p>
+      <h2>Project <span class="gold">Gallery</span></h2>
+      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0;font-size:1.05rem;">Every photo is a project we built. No stock images. No renders. Just iron.</p>
     </div>
 
-    <div class="why-grid">
-
-      <div class="why-card reveal reveal-delay-1">
-        <div class="why-icon">
-          <div class="why-icon-bg"></div>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M32 10 L32 54M10 32 L54 32" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
-            <rect x="18" y="18" width="28" height="28" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
-            <path d="M24 32 L30 38 L40 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h4>Built to Last</h4>
-        <p>No shortcuts, no compromise. Every weld, every joint, every finish is done to the highest standard — because your investment should last a lifetime.</p>
-      </div>
-
-      <div class="why-card reveal reveal-delay-2">
-        <div class="why-icon">
-          <div class="why-icon-bg"></div>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M32 8 L38 22 L54 24 L43 35 L46 51 L32 43 L18 51 L21 35 L10 24 L26 22z" stroke="currentColor" stroke-width="2.5" fill="none"/>
-            <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
-          </svg>
-        </div>
-        <h4>Custom Designs</h4>
-        <p>Every project starts with your vision. We work with you to design and engineer a piece that's uniquely yours — no cookie-cutter catalog, only custom craft.</p>
-      </div>
-
-      <div class="why-card reveal reveal-delay-3">
-        <div class="why-icon">
-          <div class="why-icon-bg"></div>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="2.5" fill="none"/>
-            <path d="M32 18 L32 34 L42 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h4>On-Time Delivery</h4>
-        <p>We respect your timeline. From quote to install, we communicate every step and deliver on the schedule we commit to — every time.</p>
-      </div>
-
-      <div class="why-card reveal reveal-delay-4">
-        <div class="why-icon">
-          <div class="why-icon-bg"></div>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 44 L12 20 Q12 10 32 10 Q52 10 52 20 L52 44" stroke="currentColor" stroke-width="2.5" fill="none"/>
-            <line x1="8" y1="44" x2="56" y2="44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M32 10 L32 44" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-            <circle cx="32" cy="26" r="4" fill="currentColor" opacity="0.6"/>
-          </svg>
-        </div>
-        <h4>Free Estimates</h4>
-        <p>No cost, no obligation. We'll visit your site, discuss your needs, and provide a detailed quote — so you know exactly what you're getting before we start.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===================== GALLERY ===================== -->
-  <section id="gallery" aria-labelledby="gallery-heading">
-    <div class="section-header section-header-center reveal">
-      <span class="section-label">Portfolio</span>
-      <h2 class="display-lg" id="gallery-heading" style="color:#fff">Our <span class="gold">Work</span></h2>
-      <div class="gold-rule gold-rule-center"></div>
-      <p style="max-width:480px;margin:0 auto;color:var(--steel);">Gallery photos coming soon. Every piece in our portfolio is one-of-a-kind — check back as we document our latest builds.</p>
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="gates">Gates</button>
+      <button class="filter-btn" data-filter="railings">Railings</button>
+      <button class="filter-btn" data-filter="structural">Structural</button>
+      <button class="filter-btn" data-filter="fences">Fences</button>
+      <button class="filter-btn" data-filter="custom">Custom</button>
     </div>
 
-    <div class="gallery-grid reveal">
-      <div class="gallery-item">
-        <div class="gallery-placeholder" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="gallery-coming-soon">
-          <span class="gallery-cs-badge">Featured Work — Coming Soon</span>
-        </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- GATES -->
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0938.jpg" data-label="Custom Gate">
+        <img src="images/IMG_0938.jpg" alt="Custom iron gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-coming-soon"><span class="gallery-cs-badge">Coming Soon</span></div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_0939.jpg" data-label="Mixed Wood/Metal Gate">
+        <img src="images/IMG_0939.jpg" alt="Mixed wood metal gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-coming-soon"><span class="gallery-cs-badge">Coming Soon</span></div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1027.jpg" data-label="Custom Gate">
+        <img src="images/IMG_1027.jpg" alt="Custom iron gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-coming-soon"><span class="gallery-cs-badge">Coming Soon</span></div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_1793.jpg" data-label="Driveway Gate">
+        <img src="images/IMG_1793.jpg" alt="Driveway gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-coming-soon"><span class="gallery-cs-badge">Coming Soon</span></div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3836.jpg" data-label="Decorative Gate">
+        <img src="images/IMG_3836.jpg" alt="Decorative gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== CTA BANNER ===================== -->
-  <div id="cta-banner" role="complementary" aria-label="Call to action">
-    <div class="cta-banner-inner">
-      <div class="cta-banner-text reveal">
-        <h2>Ready to Start<br>Your Project?</h2>
-        <p>Free estimates · No obligation · El Paso & surrounding areas</p>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_3807.jpg" data-label="Entry Gate">
+        <img src="images/IMG_3807.jpg" alt="Entry gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
       </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;" class="reveal reveal-delay-2">
-        <a href="#contact" class="btn btn-dark">Get a Free Quote</a>
-        <a href="tel:9157404901" class="btn" style="background:rgba(0,0,0,0.2);color:#111;font-family:'Oswald';font-weight:600;letter-spacing:.1em;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));">Call (915) 740-4901</a>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4180.jpg" data-label="Custom Gate">
+        <img src="images/IMG_4180.jpg" alt="Custom gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4811.jpg" data-label="Iron Gate">
+        <img src="images/IMG_4811.jpg" alt="Iron gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_4812.jpg" data-label="Gate Detail">
+        <img src="images/IMG_4812.jpg" alt="Gate detail" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5088.jpg" data-label="Custom Gate">
+        <img src="images/IMG_5088.jpg" alt="Custom gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5090.jpg" data-label="Gate Work">
+        <img src="images/IMG_5090.jpg" alt="Gate work" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5376.jpg" data-label="Custom Gate">
+        <img src="images/IMG_5376.jpg" alt="Custom gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <div class="gallery-item" data-cat="gates" data-src="images/IMG_5510.jpg" data-label="Iron Gate">
+        <img src="images/IMG_5510.jpg" alt="Iron gate" loading="lazy">
+        <div class="gallery-item-overlay"><span>Gates</span></div>
+      </div>
+      <!-- RAILINGS -->
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_1710.jpg" data-label="Custom Railing">
+        <img src="images/IMG_1710.jpg" alt="Custom railing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Railings</span></div>
+      </div>
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_2342.jpg" data-label="Stair Railing">
+        <img src="images/IMG_2342.jpg" alt="Stair railing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Railings</span></div>
+      </div>
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_6684.jpg" data-label="Iron Railing">
+        <img src="images/IMG_6684.jpg" alt="Iron railing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Railings</span></div>
+      </div>
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4021.jpg" data-label="Balcony Railing">
+        <img src="images/IMG_4021.jpg" alt="Balcony railing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Railings</span></div>
+      </div>
+      <div class="gallery-item" data-cat="railings" data-src="images/IMG_4425.jpg" data-label="Custom Railing">
+        <img src="images/IMG_4425.jpg" alt="Custom railing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Railings</span></div>
+      </div>
+      <!-- STRUCTURAL/PERGOLAS -->
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1035.jpg" data-label="Structural Steel">
+        <img src="images/IMG_1035.jpg" alt="Structural steel" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1038.jpg" data-label="Steel Structure">
+        <img src="images/IMG_1038.jpg" alt="Steel structure" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1110.jpg" data-label="Pergola">
+        <img src="images/IMG_1110.jpg" alt="Pergola" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1112.jpg" data-label="Steel Pergola">
+        <img src="images/IMG_1112.jpg" alt="Steel pergola" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1161.jpg" data-label="Pergola Structure">
+        <img src="images/IMG_1161.jpg" alt="Pergola structure" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_1163.jpg" data-label="Slatted Pergola over Pool">
+        <img src="images/IMG_1163.jpg" alt="Slatted pergola over pool" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4448.jpg" data-label="Poolside Pergola">
+        <img src="images/IMG_4448.jpg" alt="Poolside pergola with mountains" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_5795.jpg" data-label="Commercial Pergola">
+        <img src="images/IMG_5795.jpg" alt="Commercial pergola" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3929.jpg" data-label="Steel Structure">
+        <img src="images/IMG_3929.jpg" alt="Steel structure" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3931.jpg" data-label="Steel Frame">
+        <img src="images/IMG_3931.jpg" alt="Steel frame" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3957.jpg" data-label="Structural Work">
+        <img src="images/IMG_3957.jpg" alt="Structural work" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3958.jpg" data-label="Steel Construction">
+        <img src="images/IMG_3958.jpg" alt="Steel construction" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3960.jpg" data-label="Structural Fabrication">
+        <img src="images/IMG_3960.jpg" alt="Structural fabrication" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_3996.jpg" data-label="Steel Work">
+        <img src="images/IMG_3996.jpg" alt="Steel work" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <div class="gallery-item" data-cat="structural" data-src="images/IMG_4343.jpg" data-label="Rooftop Deck & Staircase">
+        <img src="images/IMG_4343.jpg" alt="Rooftop deck staircase" loading="lazy">
+        <div class="gallery-item-overlay"><span>Structural</span></div>
+      </div>
+      <!-- FENCES -->
+      <div class="gallery-item" data-cat="fences" data-src="images/IMG_0097.jpg" data-label="Iron Fence">
+        <img src="images/IMG_0097.jpg" alt="Iron fence" loading="lazy">
+        <div class="gallery-item-overlay"><span>Fences</span></div>
+      </div>
+      <div class="gallery-item" data-cat="fences" data-src="images/IMG_4667.jpg" data-label="Custom Fencing">
+        <img src="images/IMG_4667.jpg" alt="Custom fencing" loading="lazy">
+        <div class="gallery-item-overlay"><span>Fences</span></div>
+      </div>
+      <!-- CUSTOM FABRICATION -->
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4724.jpg" data-label="Custom Fabrication">
+        <img src="images/IMG_4724.jpg" alt="Custom fabrication" loading="lazy">
+        <div class="gallery-item-overlay"><span>Custom</span></div>
+      </div>
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4811.jpg" data-label="Custom Ironwork">
+        <img src="images/IMG_4811.jpg" alt="Custom ironwork" loading="lazy">
+        <div class="gallery-item-overlay"><span>Custom</span></div>
+      </div>
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6060.jpg" data-label="Woven Steel Panel">
+        <img src="images/IMG_6060.jpg" alt="Woven steel panel artisan work" loading="lazy">
+        <div class="gallery-item-overlay"><span>Custom</span></div>
+      </div>
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_6270.jpg" data-label="Custom Work">
+        <img src="images/IMG_6270.jpg" alt="Custom fabrication" loading="lazy">
+        <div class="gallery-item-overlay"><span>Custom</span></div>
+      </div>
+      <div class="gallery-item" data-cat="custom" data-src="images/IMG_4543.jpg" data-label="Custom Fabrication">
+        <img src="images/IMG_4543.jpg" alt="Custom fabrication" loading="lazy">
+        <div class="gallery-item-overlay"><span>Custom</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <div class="section-header reveal">
-      <span class="section-label">Get in Touch</span>
-      <h2 class="display-lg" id="contact-heading" style="color:#fff">Request a <span class="gold">Free Quote</span></h2>
-      <div class="gold-rule"></div>
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-arrow lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-arrow lb-next" id="lb-next" aria-label="Next">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- RIVET DIVIDER -->
+<div class="rivet-divider" style="background:var(--black);">
+  <div class="rivet-row">
+    <div class="rivet"></div><div class="rivet"></div><div class="rivet"></div>
+    <div class="rivet"></div><div class="rivet"></div>
+  </div>
+</div>
+
+<!-- =============================================
+     WHY CHOOSE US
+     ============================================= -->
+<section id="why">
+  <div class="container">
+    <div class="why-header reveal">
+      <p class="section-label" style="justify-content:center;">The Difference</p>
+      <h2>Why Choose <span class="gold">Sal's</span></h2>
     </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75"/><path d="M21 20v-2a4 4 0 00-3-3.87"/></svg>
+        <h3>30+ Years Experience</h3>
+        <p>Three decades of real-world fabrication across residential, commercial, and industrial projects in El Paso and the Borderland.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <h3>100% Custom Work</h3>
+        <p>No catalog. No cookie-cutter. Every piece is fabricated in-house to your exact specifications — designed around your space and vision.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <h3>Competitive Pricing</h3>
+        <p>Local shop, no middleman. You get master-craftsman quality at prices that actually make sense for El Paso homeowners and contractors.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2"/><path d="M3 12c1 0 2-1 2-2S4 8 3 8 1 9 1 10s1 2 2 2"/><path d="M12 21c0-1-1-2-2-2s-2 1-2 2 1 2 2 2 2-1 2-2"/><path d="M12 3c0 1-1 2-2 2S8 4 8 3s1-2 2-2 2 1 2 2"/></svg>
+        <h3>Free Estimates</h3>
+        <p>No commitment required. Tell us your project and we'll show up, measure it, and give you a straight quote — no pressure, no games.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem;" class="reveal">
+      <p style="color:var(--muted);margin-bottom:1.5rem;font-size:1.1rem;">"Built Strong. Built Right." — That's not marketing copy. That's what we show up to do every single day.</p>
+      <a href="#contact" class="btn btn-primary">Request Your Free Estimate</a>
+    </div>
+  </div>
+</section>
 
+<!-- RIVET DIVIDER -->
+<div class="rivet-divider" style="background:var(--dark);">
+  <div class="rivet-row">
+    <div class="rivet"></div><div class="rivet"></div><div class="rivet"></div>
+    <div class="rivet"></div><div class="rivet"></div>
+  </div>
+</div>
+
+<!-- =============================================
+     CONTACT
+     ============================================= -->
+<section id="contact">
+  <div class="container">
     <div class="contact-grid">
-      <div>
-        <div class="contact-info-item reveal">
-          <div class="contact-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      <div class="contact-info reveal-left">
+        <p class="section-label">Get In Touch</p>
+        <h2>Start Your<br><span class="gold">Project</span></h2>
+        <p>Have a project in mind? We'd love to hear about it. Call us, shoot an email, or fill out the form — we'll get back to you fast.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Phone</strong>
+              <a href="tel:9157404901">(915) 740-4901</a>
+            </div>
           </div>
-          <div>
-            <h5>Phone</h5>
-            <a href="tel:9157404901">(915) 740-4901</a>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <a href="mailto:ssamaniego1859@hotmail.com">ssamaniego1859@hotmail.com</a>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-info-item reveal reveal-delay-1">
-          <div class="contact-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Service Area</strong>
+              <span>El Paso, TX & Surrounding Borderland</span>
+            </div>
           </div>
-          <div>
-            <h5>Email</h5>
-            <a href="mailto:ssamaniego1859@hotmail.com">ssamaniego1859@hotmail.com</a>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Response Time</strong>
+              <span>Typically within 24 hours</span>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-info-item reveal reveal-delay-2">
-          <div class="contact-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <h5>Location</h5>
-            <p>El Paso, Texas<br><span style="font-size:.85rem;color:var(--text-muted);">Serving El Paso &amp; surrounding areas</span></p>
-          </div>
-        </div>
-
-        <div class="contact-info-item reveal reveal-delay-3">
-          <div class="contact-icon-wrap" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div>
-            <h5>Hours</h5>
-            <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat: 8:00 AM – 3:00 PM</p>
-          </div>
-        </div>
-
-        <div style="margin-top:2rem;" class="reveal reveal-delay-4">
-          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7;">
-            <strong style="color:var(--gold);">Free estimates</strong> for all projects. We'll come to your location, assess the scope, and provide a detailed written quote — no pressure, no obligation.
-          </p>
         </div>
       </div>
 
-      <div class="reveal reveal-delay-1">
-        <form class="contact-form" action="#" method="post" aria-label="Quote request form" onsubmit="handleSubmit(event)">
-          <div class="form-row">
+      <div class="contact-form reveal-right">
+        <p class="section-label">Free Estimate</p>
+        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-2col">
             <div class="form-group">
-              <label for="fname">First Name *</label>
-              <input type="text" id="fname" name="fname" placeholder="Sal" required autocomplete="given-name"/>
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-              <label for="lname">Last Name *</label>
-              <input type="text" id="lname" name="lname" placeholder="Samaniego" required autocomplete="family-name"/>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" placeholder="(915) 000-0000" required autocomplete="tel"/>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email"/>
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="(915) 555-0000">
             </div>
           </div>
           <div class="form-group">
-            <label for="service">Service Needed *</label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service...</option>
-              <option value="custom-ironworks">Custom Ironworks</option>
-              <option value="structural-fab">Structural Fabrication</option>
-              <option value="railings">Railings</option>
-              <option value="gates">Gates</option>
-              <option value="fences">Fences</option>
-              <option value="custom-project">Custom Project</option>
-              <option value="not-sure">Not Sure — Let's Talk</option>
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="f-service">Service Needed</label>
+            <select id="f-service" name="service">
+              <option value="">— Select a Service —</option>
+              <option>Custom Gates</option>
+              <option>Railings</option>
+              <option>Pergola / Shade Structure</option>
+              <option>Fencing</option>
+              <option>Structural Steel</option>
+              <option>Custom Fabrication</option>
+              <option>Multiple / Not Sure</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="market">Project Type</label>
-            <select id="market" name="market">
-              <option value="" disabled selected>Residential / Commercial / Industrial</option>
-              <option value="residential">Residential</option>
-              <option value="commercial">Commercial</option>
-              <option value="industrial">Industrial</option>
-            </select>
+            <label for="f-msg">Project Details</label>
+            <textarea id="f-msg" name="message" placeholder="Tell us about your project — dimensions, style, timeline..."></textarea>
           </div>
-          <div class="form-group">
-            <label for="message">Project Details</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project — dimensions, materials, timeline, or anything else helpful..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;margin-top:.5rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Quote Request
-          </button>
-          <p class="form-note" id="form-status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary form-submit">Send Request</button>
         </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer>
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer>
+  <div class="container">
     <!-- El Paso Skyline SVG -->
-    <div class="footer-skyline" aria-hidden="true">
-      <svg viewBox="0 0 1200 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+    <div class="footer-skyline">
+      <svg viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(196,149,43,0.15)"/>
-            <stop offset="100%" stop-color="rgba(196,149,43,0.03)"/>
+          <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c4952b" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#c4952b" stop-opacity="0.05"/>
           </linearGradient>
         </defs>
-        <!-- El Paso simplified skyline silhouette -->
-        <path d="
-          M0,140
-          L0,110
-          L30,110 L30,95 L45,95 L45,110
-          L60,110 L60,100 L80,100 L80,85 L95,85 L95,70 L100,70 L100,65 L105,65 L105,70 L110,70 L110,85 L120,85 L120,100 L140,100
-          L140,90 L155,90 L155,80 L170,80 L170,90 L190,90 L190,100
-          L210,100 L210,75 L220,75 L220,60 L225,60 L225,55 L230,55 L230,60 L235,60 L235,75 L250,75 L250,100
-          L270,100 L270,88 L285,88 L285,78 L300,78 L300,88 L315,88 L315,100
-          L330,100 L330,82 L340,82 L340,68 L345,68 L345,62 L350,58 L355,62 L355,68 L360,68 L360,82 L375,82 L375,100
-          L395,100 L395,92 L410,92 L410,84 L430,84 L430,78 L445,78 L445,84 L460,84 L460,92 L480,92 L480,100
-          L500,100 L500,70 L510,70 L510,55 L515,55 L515,48 L518,44 L521,48 L521,55 L530,55 L530,70 L545,70 L545,100
-          L565,100 L565,88 L580,88 L580,76 L595,76 L595,64 L600,64 L600,58 L605,52 L610,58 L610,64 L620,64 L620,76 L635,76 L635,88 L655,88 L655,100
-          L675,100 L675,90 L690,90 L690,82 L705,82 L705,90 L720,90 L720,100
-          L740,100 L740,78 L750,78 L750,62 L755,62 L755,55 L760,55 L760,62 L770,62 L770,78 L785,78 L785,100
-          L800,100 L800,92 L815,92 L815,84 L830,84 L830,92 L845,92 L845,100
-          L865,100 L865,85 L875,85 L875,72 L880,72 L880,65 L885,60 L890,65 L890,72 L900,72 L900,85 L915,85 L915,100
-          L935,100 L935,90 L950,90 L950,82 L965,82 L965,90 L980,90 L980,100
-          L1000,100 L1000,88 L1015,88 L1015,100
-          L1030,100 L1030,92 L1050,92 L1050,78 L1060,78 L1060,70 L1065,65 L1070,70 L1070,78 L1085,78 L1085,92 L1100,92 L1100,100
-          L1120,100 L1120,108 L1145,108 L1145,100
-          L1170,100 L1170,110 L1200,110
-          L1200,140
-          Z
-        " fill="url(#skyGrad)" stroke="rgba(196,149,43,0.2)" stroke-width="0.5"/>
-        <!-- Franklin Mountains suggestion on left -->
-        <path d="M0,140 L0,80 L40,55 L80,70 L120,45 L160,65 L200,80 L200,140Z" fill="rgba(196,149,43,0.04)" stroke="none"/>
+        <!-- Mountains in background -->
+        <polygon points="0,80 80,20 150,50 220,15 300,45 380,10 450,40 520,5 600,35 680,8 760,38 840,12 920,42 1000,18 1080,45 1150,22 1200,38 1200,80" fill="rgba(196,149,43,0.06)"/>
+        <!-- City skyline -->
+        <rect x="50" y="50" width="20" height="30" fill="rgba(196,149,43,0.15)"/>
+        <rect x="75" y="42" width="15" height="38" fill="rgba(196,149,43,0.12)"/>
+        <rect x="95" y="38" width="25" height="42" fill="rgba(196,149,43,0.18)"/>
+        <rect x="100" y="32" width="8" height="10" fill="rgba(196,149,43,0.15)"/><!-- antenna -->
+        <rect x="125" y="48" width="18" height="32" fill="rgba(196,149,43,0.1)"/>
+        <rect x="148" y="44" width="22" height="36" fill="rgba(196,149,43,0.14)"/>
+        <rect x="175" y="52" width="16" height="28" fill="rgba(196,149,43,0.1)"/>
+        <rect x="200" y="40" width="30" height="40" fill="rgba(196,149,43,0.16)"/>
+        <rect x="213" y="34" width="5" height="8" fill="rgba(196,149,43,0.2)"/>
+        <rect x="235" y="55" width="20" height="25" fill="rgba(196,149,43,0.1)"/>
+        <rect x="260" y="46" width="18" height="34" fill="rgba(196,149,43,0.13)"/>
+        <rect x="283" y="50" width="25" height="30" fill="rgba(196,149,43,0.11)"/>
+        <rect x="315" y="44" width="20" height="36" fill="rgba(196,149,43,0.14)"/>
+        <rect x="340" y="38" width="28" height="42" fill="rgba(196,149,43,0.17)"/>
+        <rect x="352" y="30" width="6" height="10" fill="rgba(196,149,43,0.2)"/>
+        <rect x="373" y="52" width="16" height="28" fill="rgba(196,149,43,0.1)"/>
+        <rect x="395" y="48" width="22" height="32" fill="rgba(196,149,43,0.13)"/>
+        <!-- Stars -->
+        <circle cx="500" cy="15" r="1" fill="rgba(196,149,43,0.4)"/>
+        <circle cx="620" cy="8" r="1.2" fill="rgba(196,149,43,0.5)"/>
+        <circle cx="750" cy="18" r="0.8" fill="rgba(196,149,43,0.3)"/>
+        <circle cx="870" cy="10" r="1" fill="rgba(196,149,43,0.4)"/>
+        <circle cx="980" cy="20" r="1.2" fill="rgba(196,149,43,0.35)"/>
+        <circle cx="1100" cy="12" r="0.9" fill="rgba(196,149,43,0.4)"/>
+        <!-- Ground line -->
+        <line x1="0" y1="80" x2="1200" y2="80" stroke="rgba(196,149,43,0.2)" stroke-width="1"/>
       </svg>
     </div>
 
-    <div class="footer-main">
-      <div class="footer-brand">
-        <div class="footer-brand-text">Sal's Ironworks<br>and Fabrication</div>
-        <div class="footer-brand-sub">Built Strong. Built Right.</div>
-        <p class="footer-desc">Custom ironworks and structural fabrication serving El Paso, Texas and surrounding areas. Family-owned. Precision-built. Every time.</p>
-        <div style="display:flex;align-items:center;gap:.75rem;margin-top:1rem;">
-          <!-- TX Star badge -->
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Texas star" role="img">
-            <polygon points="16,2 19.5,12 30,12 21.5,18.5 24.5,28.5 16,22 7.5,28.5 10.5,18.5 2,12 12.5,12" fill="rgba(196,149,43,0.5)" stroke="var(--gold)" stroke-width="1"/>
-          </svg>
-          <span style="font-family:'Oswald';font-size:.7rem;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;">El Paso, Texas</span>
-        </div>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">SAL'S <span>IRONWORKS</span></div>
+        <div class="footer-tagline">Built Strong. Built Right. — El Paso, TX</div>
       </div>
-
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="#services">Custom Ironworks</a></li>
-          <li><a href="#services">Structural Fabrication</a></li>
-          <li><a href="#services">Railings</a></li>
-          <li><a href="#services">Gates</a></li>
-          <li><a href="#services">Fences</a></li>
-          <li><a href="#services">Custom Projects</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-          <a href="tel:9157404901">(915) 740-4901</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:ssamaniego1859@hotmail.com" style="word-break:break-all;font-size:.8rem;">ssamaniego1859@hotmail.com</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>El Paso, TX</span>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          <span>Mon–Fri 7am–6pm<br>Sat 8am–3pm</span>
-        </div>
-      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:9157404901">(915) 740-4901</a></li>
+      </ul>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Sal's Ironworks and Fabrication. All rights reserved. El Paso, Texas.</p>
-      <p><a href="https://salsironworks.com">salsironworks.com</a></p>
+    <div class="footer-copy">
+      &copy; 2026 Sal's Ironworks and Fabrication — El Paso, TX &nbsp;|&nbsp; salsironworks.com &nbsp;|&nbsp; All rights reserved.
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- ===================== JAVASCRIPT ===================== -->
-  <script>
-    // ---- Navbar scroll effect ----
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+<!-- =============================================
+     JAVASCRIPT
+     ============================================= -->
+<script>
+/* ---- Sparks Canvas ---- */
+(function() {
+  const canvas = document.getElementById('sparks-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
 
-    // ---- Mobile menu ----
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') hamburger.click(); });
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // ---- Scroll reveal ----
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => revealObs.observe(el));
-
-    // ---- Smooth active nav link ----
-    const sections = document.querySelectorAll('section[id], div[id="cta-banner"]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const navObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.style.color = link.getAttribute('href') === '#' + entry.target.id
-              ? 'var(--gold)' : '';
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-    sections.forEach(s => navObs.observe(s));
-
-    // ---- Contact form ----
-    function handleSubmit(e) {
-      e.preventDefault();
-      const status = document.getElementById('form-status');
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        status.style.color = 'var(--gold)';
-        status.textContent = '✓ Message received! We\'ll be in touch within 24 hours.';
-        btn.textContent = 'Send Quote Request';
-        btn.disabled = false;
-        e.target.reset();
-      }, 1200);
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+  function createParticle() {
+    return {
+      x: rand(canvas.width * 0.1, canvas.width * 0.9),
+      y: rand(canvas.height * 0.3, canvas.height * 0.8),
+      vx: rand(-2.5, 2.5),
+      vy: rand(-5, -1.5),
+      life: 1,
+      decay: rand(0.008, 0.022),
+      size: rand(1, 3),
+      gold: Math.random() > 0.4
+    };
+  }
+  function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Add new particles
+    if (particles.length < 60 && Math.random() < 0.35) {
+      particles.push(createParticle());
     }
+    particles = particles.filter(p => p.life > 0);
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.04; // gravity
+      p.vx *= 0.99;
+      p.life -= p.decay;
+      const alpha = p.life * 0.85;
+      const color = p.gold
+        ? `rgba(196,149,43,${alpha})`
+        : `rgba(232,180,100,${alpha})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.shadowColor = p.gold ? '#c4952b' : '#e8b464';
+      ctx.shadowBlur = 6;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
 
-    // ---- Trigger reveals that are already in viewport on load ----
-    window.addEventListener('load', () => {
-      revealEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          el.classList.add('visible');
-        }
-      });
+/* ---- Hero BG parallax load ---- */
+document.getElementById('hero-bg').classList.add('loaded');
+
+/* ---- Navbar scroll behavior ---- */
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  // Active nav link
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+
+/* ---- Mobile menu ---- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+document.querySelectorAll('.mm-link, .mobile-menu .btn').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+/* ---- Gallery filter ---- */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    galleryItems.forEach(item => {
+      if (filter === 'all' || item.dataset.cat === filter) {
+        item.classList.remove('hidden');
+        item.style.animation = 'none';
+        item.offsetHeight; // reflow
+        item.style.animation = 'fadeIn .4s ease forwards';
+      } else {
+        item.classList.add('hidden');
+      }
     });
-  </script>
+  });
+});
 
+/* ---- Lightbox ---- */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCounter = document.getElementById('lb-counter');
+let lbItems = [];
+let lbIndex = 0;
+
+function getVisibleItems() {
+  return Array.from(galleryItems).filter(i => !i.classList.contains('hidden'));
+}
+function openLightbox(idx) {
+  lbItems = getVisibleItems();
+  lbIndex = idx;
+  lbImg.src = lbItems[lbIndex].dataset.src;
+  lbCounter.textContent = (lbIndex + 1) + ' / ' + lbItems.length;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbMove(dir) {
+  lbItems = getVisibleItems();
+  lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+  lbImg.src = lbItems[lbIndex].dataset.src;
+  lbCounter.textContent = (lbIndex + 1) + ' / ' + lbItems.length;
+}
+
+galleryItems.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const visible = getVisibleItems();
+    const visIdx = visible.indexOf(item);
+    if (visIdx !== -1) openLightbox(visIdx);
+  });
+});
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', () => lbMove(-1));
+document.getElementById('lb-next').addEventListener('click', () => lbMove(1));
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbMove(-1);
+  if (e.key === 'ArrowRight') lbMove(1);
+});
+
+/* ---- Intersection Observer: reveal ---- */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+/* ---- Stagger service/why cards ---- */
+document.querySelectorAll('.service-card.reveal, .why-card.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
+});
+
+/* ---- Contact form ---- */
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  // Mailto fallback
+  const name = document.getElementById('f-name').value;
+  const phone = document.getElementById('f-phone').value;
+  const email = document.getElementById('f-email').value;
+  const service = document.getElementById('f-service').value;
+  const msg = document.getElementById('f-msg').value;
+  const body = encodeURIComponent(
+    `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nDetails:\n${msg}`
+  );
+  setTimeout(() => {
+    window.location.href = `mailto:ssamaniego1859@hotmail.com?subject=Estimate Request — ${service || 'Ironworks'}&body=${body}`;
+    btn.textContent = 'Request Sent!';
+    btn.style.background = '#3d6b3d';
+  }, 600);
+}
+
+/* ---- fadeIn keyframe ---- */
+const style = document.createElement('style');
+style.textContent = `@keyframes fadeIn { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>
