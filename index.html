@@ -514,6 +514,15 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
   text-transform: uppercase; color: var(--gold);
   font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
 }
+/* Video play icon */
+.gallery-video-icon {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2; pointer-events: none;
+  transition: transform .3s, opacity .3s;
+  opacity: .9;
+}
+.gallery-item:hover .gallery-video-icon { transform: translate(-50%,-50%) scale(1.1); opacity: 1; }
 /* Gold glow on hover */
 .gallery-item::after {
   content: '';
@@ -532,11 +541,12 @@ h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
   align-items: center; justify-content: center;
 }
 #lightbox.open { display: flex; }
-#lightbox img {
+#lightbox img, #lightbox video {
   max-width: 90vw; max-height: 90vh;
   object-fit: contain;
   border: 1px solid rgba(196,149,43,.25);
 }
+#lightbox video { outline: none; }
 .lb-close {
   position: absolute; top: 1.5rem; right: 2rem;
   font-size: 2rem; color: var(--warm); cursor: pointer;
@@ -991,6 +1001,7 @@ footer {
       <button class="filter-btn" data-filter="structural" data-en="Structural" data-es="Estructural">Structural</button>
       <button class="filter-btn" data-filter="fences" data-en="Fences" data-es="Cercas">Fences</button>
       <button class="filter-btn" data-filter="custom" data-en="Custom" data-es="Personalizado">Custom</button>
+      <button class="filter-btn" data-filter="video" data-en="Video" data-es="Video">Video</button>
     </div>
 
     <div class="gallery-grid" id="gallery-grid">
@@ -1158,6 +1169,14 @@ footer {
       <div class="gallery-item" data-cat="gates" data-src="images/NEW_05.jpg" data-label="Residential Decorative Double-Swing Gate" data-label-es="Portón Residencial Doble con Decorado">
         <img src="images/NEW_05.jpg" alt="Residential decorative double-swing gate with scrollwork" loading="lazy">
         <div class="gallery-item-overlay"><span data-en="Gates" data-es="Portones">Gates</span></div>
+      </div>
+      <!-- VIDEO -->
+      <div class="gallery-item gallery-video" data-cat="gates,fences,video" data-video="images/IMG_9610.mp4" data-label="Gates & Fencing Work" data-label-es="Trabajo de Portones y Cercas">
+        <img src="images/IMG_9610_thumb.jpg" alt="Gates and fencing video" loading="lazy">
+        <div class="gallery-video-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="rgba(0,0,0,.6)" stroke="#c4952b" stroke-width="2"/><polygon points="20,15 36,24 20,33" fill="#c4952b"/></svg>
+        </div>
+        <div class="gallery-item-overlay"><span data-en="Video" data-es="Video">Video</span></div>
       </div>
       <!-- CUSTOM FABRICATION -->
       <div class="gallery-item" data-cat="custom" data-src="images/IMG_4724.jpg" data-label="Custom Fabrication" data-label-es="Fabricación a Medida">
@@ -1545,7 +1564,8 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.dataset.filter;
     galleryItems.forEach(item => {
-      if (filter === 'all' || item.dataset.cat === filter) {
+      const cats = item.dataset.cat.split(',');
+      if (filter === 'all' || cats.includes(filter)) {
         item.classList.remove('hidden');
         item.style.animation = 'none';
         item.offsetHeight;
@@ -1567,22 +1587,45 @@ let lbIndex = 0;
 function getVisibleItems() {
   return Array.from(galleryItems).filter(i => !i.classList.contains('hidden'));
 }
+function showLbItem(item) {
+  const video = item.dataset.video;
+  const existingVideo = lightbox.querySelector('video');
+  if (existingVideo) { existingVideo.pause(); existingVideo.remove(); }
+  if (video) {
+    lbImg.style.display = 'none';
+    const v = document.createElement('video');
+    v.src = video;
+    v.controls = true;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.style.maxWidth = '90vw';
+    v.style.maxHeight = '90vh';
+    v.style.border = '1px solid rgba(196,149,43,.25)';
+    lbImg.parentNode.insertBefore(v, lbImg);
+  } else {
+    lbImg.style.display = '';
+    lbImg.src = item.dataset.src;
+  }
+}
 function openLightbox(idx) {
   lbItems = getVisibleItems();
   lbIndex = idx;
-  lbImg.src = lbItems[lbIndex].dataset.src;
+  showLbItem(lbItems[lbIndex]);
   lbCounter.textContent = (lbIndex + 1) + ' / ' + lbItems.length;
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
+  const v = lightbox.querySelector('video');
+  if (v) { v.pause(); v.remove(); }
+  lbImg.style.display = '';
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
 }
 function lbMove(dir) {
   lbItems = getVisibleItems();
   lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
-  lbImg.src = lbItems[lbIndex].dataset.src;
+  showLbItem(lbItems[lbIndex]);
   lbCounter.textContent = (lbIndex + 1) + ' / ' + lbItems.length;
 }
 
